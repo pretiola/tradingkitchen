@@ -30,6 +30,8 @@ class Page(HTMLParser):
         self.ids = set()
         self.scripts = []
         self.styles = []
+        self.forms = []
+        self.current_form = None
         self.active = None
         self.buffer = []
         self.feed(path.read_text(encoding="utf-8"))
@@ -38,6 +40,11 @@ class Page(HTMLParser):
     def handle_starttag(self, tag, attributes):
         attrs = dict(attributes)
         self.tags.append((tag, attrs))
+        if tag == "form":
+            self.current_form = {"attrs": attrs, "fields": []}
+            self.forms.append(self.current_form)
+        elif self.current_form is not None and tag in {"input", "button", "select", "textarea"}:
+            self.current_form["fields"].append(attrs)
         if attrs.get("id"):
             check(attrs["id"] not in self.ids, f"{self.name}: duplicate id {attrs['id']}")
             self.ids.add(attrs["id"])
@@ -56,6 +63,8 @@ class Page(HTMLParser):
             self.buffer.append(data)
 
     def handle_endtag(self, tag):
+        if tag == "form":
+            self.current_form = None
         if self.active and self.active[0] == tag:
             if tag == "script":
                 self.scripts.append((self.active[1], "".join(self.buffer)))
@@ -113,6 +122,28 @@ def schema_objects(value):
             yield from schema_objects(item)
 
 
+def check_newsletter(page):
+    forms = [form for form in page.forms if form["attrs"].get("id") == "newsletter-form"]
+    check(len(forms) == 1, "index.html: expected one mailing-list signup form")
+    if len(forms) != 1:
+        return
+    form = forms[0]
+    attrs = form["attrs"]
+    check(attrs.get("action") == "https://buttondown.com/api/emails/embed-subscribe/tradingkitchen", "index.html: mailing-list form must use the verified Buttondown endpoint")
+    check(attrs.get("method", "").lower() == "post", "index.html: mailing-list signup must POST to Buttondown")
+    check("novalidate" not in attrs and "onsubmit" not in attrs, "index.html: preserve native signup validation and submission")
+    emails = [field for field in form["fields"] if field.get("name") == "email"]
+    check(len(emails) == 1, "index.html: expected one subscriber email input")
+    if len(emails) == 1:
+        email = emails[0]
+        check(email.get("type") == "email" and "required" in email, "index.html: signup requires a valid email address")
+        check(bool(email.get("id")) and any(label.get("for") == email.get("id") for label in page.attributes("label")), "index.html: signup email needs an associated label")
+        description_ids = email.get("aria-describedby", "").split()
+        check(bool(description_ids) and all(value in page.ids for value in description_ids), "index.html: signup email needs accessible confirmation instructions")
+    check(any(field.get("type") == "hidden" and field.get("name") == "embed" and field.get("value") == "1" for field in form["fields"]), "index.html: missing Buttondown embed field")
+    check(not any(field.get("formaction") or "formnovalidate" in field for field in form["fields"]), "index.html: signup fields must preserve the provider endpoint and validation")
+
+
 def main():
     check(SITE.is_dir(), f"Missing build output: {SITE}; run npm run build first")
     if not SITE.is_dir():
@@ -121,6 +152,8 @@ def main():
     check(bool(pages), "No HTML pages were built")
     page_by_path = {page.path: page for page in pages}
     for page in pages:
+        if page.name == "index.html":
+            check_newsletter(page)
         html = page.attributes("html")
         check(len(html) == 1 and bool(html[0].get("lang")), f"{page.name}: missing document language")
         check(bool(page.attributes("title")), f"{page.name}: missing title")
@@ -179,7 +212,7 @@ def main():
         check((SITE / "CNAME").read_text(encoding="utf-8").strip() == DOMAIN, f"CNAME must contain {DOMAIN}")
     except OSError as error:
         errors.append(str(error))
-    print(f"Checked {len(pages)} pages, local links/assets, JavaScript syntax, JSON-LD, sitemap, robots.txt and CNAME.")
+    print(f"Checked {len(pages)} pages, signup form, local links/assets, JavaScript syntax, JSON-LD, sitemap, robots.txt and CNAME.")
 
 
 if __name__ == "__main__":

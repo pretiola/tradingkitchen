@@ -391,18 +391,20 @@
                 <p>The lessons from the pantry are clear: resilience is decentralized. True freedom is the ability to adapt, to produce, and to trade value, independent of failing systems.</p>
                 <p>This is where we move from the kitchen to the economy. We will explore sound economics, personal sovereignty, and how to harness human dignity to reclaim our standard of living.</p>
                 
-                <!-- Email Registration -->
+                <!-- Mailing list -->
                 <div class="mt-8 pt-8 border-t-2 border-gray-100">
-                    <p class="font-bold text-2xl mb-4">Request Invite to The Trading Post</p>
-                    <label for="invite-email" class="block font-bold mb-2">Email address</label>
-                    <form id="invite-form" action="https://formspree.io/f/mjglgbao" method="POST" class="flex flex-col md:flex-row gap-4">
-                        <input id="invite-email" type="email" name="email" autocomplete="email" aria-describedby="signup-note" placeholder="Enter your email" required class="flex-grow p-4 border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-black text-xl">
+                    <h3 class="font-bold text-2xl mb-4">A little more from the kitchen</h3>
+                    <p class="mb-4">Join our mailing list for new recipes and updates from The Trading Post.</p>
+                    <label for="newsletter-email" class="block font-bold mb-2">Email address</label>
+                    <form id="newsletter-form" action="https://buttondown.com/api/emails/embed-subscribe/tradingkitchen" method="post" class="flex flex-col md:flex-row gap-4">
+                        <input id="newsletter-email" type="email" name="email" autocomplete="email" aria-describedby="signup-note" placeholder="Enter your email" required class="flex-grow min-w-0 p-4 border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-black text-xl">
+                        <input type="hidden" name="embed" value="1">
                         <button type="submit" class="bg-black text-white py-4 px-10 rounded-lg font-bold text-xl hover:bg-gray-800 transition-all transform hover:scale-105 active:scale-95 whitespace-nowrap">
-                            Request an invite
+                            Join the mailing list
                         </button>
                     </form>
-                    <p id="signup-note" class="mt-3 text-base">Request Trading Post updates by email. Your request is sent through Formspree.</p>
-                    <div id="form-status" role="status" aria-live="polite" class="mt-4 text-lg font-bold hidden"></div>
+                    <p id="signup-note" class="mt-3 text-base">Check your inbox for a confirmation email to finish joining. Unsubscribe any time.</p>
+                    <p class="mt-2 text-base">Powered by <a href="https://buttondown.com/tradingkitchen" class="underline hover:text-gray-700">Buttondown</a>. <a href="https://buttondown.com/legal/privacy" class="underline hover:text-gray-700">Buttondown privacy policy</a>.</p>
                 </div>
             </div>
         </section>
@@ -470,6 +472,5 @@
 
 </script>
 
-<script src="assets/newsletter.js" defer></script>
 </body>
 </html>

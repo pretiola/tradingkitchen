@@ -27,8 +27,6 @@ jobs:
           cache: npm
       - name: Install pinned dependencies
         run: npm ci
-      - name: Test newsletter behavior
-        run: npm test
       - name: Build and validate public website
         run: npm run build
       - name: Upload Pages artifact
