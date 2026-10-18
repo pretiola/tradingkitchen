@@ -27,8 +27,8 @@ jobs:
           cache: npm
       - name: Install pinned dependencies
         run: npm ci
-      - name: Build and validate public website
-        run: npm run build
+      - name: Test, build and validate public website
+        run: npm test
       - name: Upload Pages artifact
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4
