@@ -139,3 +139,5 @@ The owner-approved live Gmail signup test passed against the deployed form in re
 This verifies the signup and confirmation flow with one approved address. Static build checks alone do not establish these outcomes.
 
 The public postal contact address is currently blank. Before sending the first newsletter broadcast, the owner needs to provide the intended public postal contact address. No email campaigns have been sent.
+
+The four color-remake image URLs include a content-hash query parameter in page, social, and structured-data references. This avoids showing cached copies of the former photos immediately after deployment; the original image filenames remain available.
