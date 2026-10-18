@@ -11,7 +11,7 @@ Provide the knowledge and tools to maximize individual freedom and improve quali
 - Provide a simple local build and preview workflow through npm and Python's web server.
 - Update analytics and establish the new Search Console property and sitemap.
 - Verify the existing mailing-list form or connect a replacement that reliably stores subscribers and delivers confirmations.
-- Add the owner's chocolate chip cookie recipe when its ingredients, quantities, instructions, and any image are supplied.
+- Add the owner’s chocolate chip cookie recipe and supplied photo (implemented in `chocolate_chip_cookies.html`).
 
 See [deployment notes](DEPLOYMENT.md) for the current operational status and remaining account-dependent steps.
 

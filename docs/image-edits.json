@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-18",
+  "mode": "built-in image_gen (edits)",
+  "notes": "Recipe photographs edited at the owner's request. JPEG files are format-only encodings of the selected image outputs. Historical recipe scenes are illustrations, not archival photographs.",
+  "images": [
+    {
+      "file": "chocolate_chip_cookies.jpg",
+      "references": [
+        "Owner-supplied cookie photograph and first neutral-background edit",
+        "Owner-supplied Magic Baking Powder packaging",
+        "banana_bread.jpeg",
+        "Updated IMG_3135.jpg",
+        "noodles.jpg"
+      ],
+      "prompt": "Use case: compositing\nAsset type: photorealistic hero photograph for Trading Kitchen's chocolate chip cookie recipe, landscape 3:2.\nPrimary request: Revise the first cookie image into a much more inviting, warm autumn baking scene, inspired by the attached banana bread and Good Friday scones images, with a naturally placed Magic Baking Powder tin like the product placement in the beef and noodles reference.\nInput images: Image 1 is the edit target: preserve the distinctive three large rustic chocolate chip cookies and gray ceramic plate, their irregular craggy texture and arrangement. Image 2 is the exact product packaging to include, supporting insert. Image 3 is a mood/staging reference (banana bread): wooden table, honest home baking ingredients and cozy shallow depth of field. Image 4 is a setting reference (scones): old wooden window, welcoming cottage atmosphere and richly textured table. Image 5 is a product-placement reference (beef and noodles): integrate packaging naturally behind the dish; do not copy its monochrome palette or other food.\nScene/backdrop: Cozy cottage kitchen in fall. Set the plate on a warm worn wooden table with soft oatmeal linen, beside a wooden-framed window. Outside, softly blurred amber, ochre and russet autumn leaves. Background should feel inhabited and real, but no people. Give enough space around the plate to tell the home-baking story.\nSubject: Keep the original cookies recognizably the same with crisp golden edges, tender centers and realistic glossy softened chocolate pieces. Very delicate wisps of steam catch warm side light.\nSupporting ingredients: Small bowl of chocolate chips, a modest scoop of flour and brown sugar, an egg and a few butter pieces arranged casually at the back/sides. Use only ingredients in a chocolate chip cookie recipe; no bananas, nuts, cinnamon or pumpkin ingredients.\nProduct: Place one realistically sized red-and-yellow Magic Baking Powder tin from Image 2 in the mid-background beside the ingredients. Its label faces generally toward the camera, recognizable and readable yet secondary to cookies; accurate red cap, yellow borders and large label text \"MAGIC BAKING POWDER\" with \"450 g\". Match perspective, grounding shadows and window illumination. This is an actual small kitchen canister, not a bottle, not an oversized advertisement.\nLighting/mood: Warm late-afternoon autumn window light, soft golden highlights, gentle readable shadows and natural warm colors. Welcoming, delicious editorial food photography. No artificial sepia filter.\nComposition: Plate and appetizing cookies dominate the foreground, label visible behind to one side, ingredients subtly frame the food without clutter. Landscape 1536 by 1024 appearance, eye-level slightly above the table, realistic optical depth of field. Preserve cookie and plate identity; change environment, lighting and food styling.\nAvoid: hands, people, synthetic CGI surfaces, oversized cookies, excessive smoke, flat gray studio background, extra brand marks, captions or watermarks."
+    },
+    {
+      "file": "IMG_3135.jpg",
+      "references": [
+        "Previous IMG_3135.jpg"
+      ],
+      "prompt": "Use case: precise-object-edit. Input image 1 is the edit target. Edit ONLY the baked items on the plate: replace all of the round muffin-shaped scones with clearly triangular, thick, hand-cut scone wedges. They must have three straight-ish sides and pointed corners, flat-bottomed wedge shapes, rustic flaky layered crumb and lightly cracked golden tops, with naturally browned edges. Arrange a similar number of triangular scones naturally piled on the SAME plate in the SAME position and scale. Preserve everything else in the photo as closely as possible: the gray-blue plate, linen cloth, aged wooden table, oil lamp, salt shakers, open wooden window, lake, buildings, flowers, sunlight, colors, camera angle and landscape framing. Keep a convincing real food photograph. No muffin cups or cylindrical muffin bases anywhere. No extra food, icing, text, logos, watermark or added steam."
+    },
+    {
+      "file": "hoover.jpg",
+      "references": [
+        "Previous hoover.jpg",
+        "Hoover Stew recipe description and ingredients"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: realistic food and historical setting illustration for a Hoover Stew recipe. Input image 1 is the edit target. Remove EVERY person, face, body, hand and arm from the scene, including cropped people along both edges and people in the background. Reconstruct the cleared areas naturally as an empty, modest 1930s Hooverville outdoor cooking area. Preserve the broad composition of the central large soot-blackened cooking pot over a low wood fire, rough plank-and-corrugated-metal shelters, earth ground, simple enamel bowls and unlabelled tin cans, with believable scale and physically coherent objects. Make the pot and food much more realistic and consistent with this actual recipe: cooked elbow macaroni, chopped canned tomatoes, thin coin slices of hot dogs and canned corn, simmered together with water/broth for 15–20 minutes into a filling, lightly thickened tomato-based stew. Ingredients should be naturally mixed and partly submerged in a reddish-brown broth; tender glossy macaroni and a modest amount of hot dog coins and corn, not separate dry piles or giant sausage chunks. Fill the pot to a realistic level below the rim. Add only light natural steam. Use lifelike photographic textures, restrained natural earthy colors instead of an artificial sepia wash, soft overcast daylight, realistic food moisture and shadows, slight background depth of field. The stew is the clear focal point. Keep landscape framing. Avoid any humans, human reflections, hands, floating utensils, duplicated malformed bowls, modern plastics, luxury garnish, text, labels or watermark. This is a newly made illustrative scene, not an archival photograph."
+    }
+  ]
+}
