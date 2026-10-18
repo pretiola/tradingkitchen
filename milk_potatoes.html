@@ -12,7 +12,9 @@
     <meta property="og:title" content="Milk Potatoes - Trading Kitchen">
     <meta property="og:description" content="Pan-fried potatoes and onions gently simmered in milk to make a creamy skillet meal. Find the simple recipe and story at Trading Kitchen.">
     <meta property="og:url" content="https://tradingkitchen.org/milk_potatoes.html">
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="https://tradingkitchen.org/milk_potatoes.jpg">
+    <meta property="og:image:alt" content="Sliced potatoes and onions in a creamy milk sauce in a skillet">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -35,10 +37,54 @@
       ]
     },
     {
-      "@type": "WebPage",
+      "@type": "Recipe",
+      "@id": "https://tradingkitchen.org/milk_potatoes.html#recipe",
       "name": "Milk Potatoes",
       "description": "Pan-fried potatoes and onions gently simmered in milk to make a creamy skillet meal. Find the simple recipe and story at Trading Kitchen.",
-      "url": "https://tradingkitchen.org/milk_potatoes.html"
+      "url": "https://tradingkitchen.org/milk_potatoes.html",
+      "mainEntityOfPage": "https://tradingkitchen.org/milk_potatoes.html",
+      "image": [
+        "https://tradingkitchen.org/milk_potatoes.jpg"
+      ],
+      "recipeIngredient": [
+        "4-5 medium potatoes, sliced thin",
+        "1 onion, sliced thin",
+        "2 Tbsp. lard, bacon fat, or butter",
+        "Salt and pepper",
+        "~2 cups milk (enough to just cover the potatoes)"
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "In a large skillet with a lid, melt the fat over medium heat.",
+          "url": "https://tradingkitchen.org/milk_potatoes.html#step-1"
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Add the sliced potatoes and onions. Fry, stirring occasionally, until the potatoes are just starting to get golden brown and are almost cooked through (about 10-15 minutes).",
+          "url": "https://tradingkitchen.org/milk_potatoes.html#step-2"
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Season generously with salt and pepper.",
+          "url": "https://tradingkitchen.org/milk_potatoes.html#step-3"
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Pour the milk over the potatoes and onions in the skillet.",
+          "url": "https://tradingkitchen.org/milk_potatoes.html#step-4"
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Bring to a simmer (do not boil), then reduce the heat to low, cover, and let it gently bubble for another 5-10 minutes.",
+          "url": "https://tradingkitchen.org/milk_potatoes.html#step-5"
+        },
+        {
+          "@type": "HowToStep",
+          "text": "The milk will reduce, and the starch from the potatoes will thicken it into a cream sauce. Serve hot.",
+          "url": "https://tradingkitchen.org/milk_potatoes.html#step-6"
+        }
+      ]
     }
   ]
 }
@@ -60,7 +106,7 @@
             font-weight: 700;
         }
             img {
-            filter: grayscale(100%) sepia(100%);
+            filter: none;
         }
 
         /* Vignette and Radial Blur Effects (Background Layer) */
@@ -120,6 +166,8 @@
             <h1 class="text-4xl md:text-6xl font-bold mb-6">Milk Potatoes</h1>
             <a href="#recipe-section" class="inline-block font-bold underline mb-2 print:hidden">Jump to recipe &darr;</a>
 
+            <img src="milk_potatoes.jpg" alt="Sliced potatoes and onions in a creamy milk sauce in a skillet" class="w-full rounded-lg shadow-lg my-8 border-2 border-black print:hidden" decoding="async">
+
             
             <!-- Share Icons -->
             <div class="flex flex-wrap items-center gap-2 my-6 print:hidden border-b border-gray-200 pb-4">
@@ -153,6 +201,8 @@
             <section id="recipe-section" class="my-8">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 border-b-2 border-gray-300 pb-2">The Recipe</h2>
                 
+                <img src="milk_potatoes.jpg" alt="Sliced potatoes and onions in a creamy milk sauce in a skillet" class="hidden print:block w-48 h-48 object-cover rounded-lg shadow-none my-4 border-2 border-black float-right ml-4" decoding="async">
+
                 <h3 class="text-2xl font-bold mt-6 mb-2">Ingredients</h3>
                 <ul class="list-disc list-inside text-lg md:text-xl space-y-2">
                     <li>4-5 medium potatoes, sliced thin</li>
@@ -164,12 +214,12 @@
 
                 <h3 class="text-2xl font-bold mt-6 mb-2">Instructions</h3>
                 <ol class="list-decimal list-inside text-lg md:text-xl space-y-2">
-                    <li>In a large skillet with a lid, melt the fat over medium heat.</li>
-                    <li>Add the sliced potatoes and onions. Fry, stirring occasionally, until the potatoes are just starting to get golden brown and are <em>almost</em> cooked through (about 10-15 minutes).</li>
-                    <li>Season generously with salt and pepper.</li>
-                    <li>Pour the milk over the potatoes and onions in the skillet.</li>
-                    <li>Bring to a simmer (do not boil), then reduce the heat to low, cover, and let it gently bubble for another 5-10 minutes.</li>
-                    <li>The milk will reduce, and the starch from the potatoes will thicken it into a cream sauce. Serve hot.</li>
+                    <li id="step-1">In a large skillet with a lid, melt the fat over medium heat.</li>
+                    <li id="step-2">Add the sliced potatoes and onions. Fry, stirring occasionally, until the potatoes are just starting to get golden brown and are <em>almost</em> cooked through (about 10-15 minutes).</li>
+                    <li id="step-3">Season generously with salt and pepper.</li>
+                    <li id="step-4">Pour the milk over the potatoes and onions in the skillet.</li>
+                    <li id="step-5">Bring to a simmer (do not boil), then reduce the heat to low, cover, and let it gently bubble for another 5-10 minutes.</li>
+                    <li id="step-6">The milk will reduce, and the starch from the potatoes will thicken it into a cream sauce. Serve hot.</li>
                 </ol>
             </section>
 

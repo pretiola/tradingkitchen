@@ -12,7 +12,9 @@
     <meta property="og:title" content="Zaprezna Soup - Trading Kitchen">
     <meta property="og:description" content="Make Zaprezna soup with a simple roux, caraway or paprika, and homemade dumplings. Find the recipe and story at Trading Kitchen.">
     <meta property="og:url" content="https://tradingkitchen.org/zaprezna_soup.html">
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="https://tradingkitchen.org/zaprezna_soup.jpg">
+    <meta property="og:image:alt" content="Zaprezna soup with golden caraway broth and egg-and-flour dumplings">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -35,10 +37,57 @@
       ]
     },
     {
-      "@type": "WebPage",
+      "@type": "Recipe",
+      "@id": "https://tradingkitchen.org/zaprezna_soup.html#recipe",
       "name": "Zaprezna Soup",
       "description": "Make Zaprezna soup with a simple roux, caraway or paprika, and homemade dumplings. Find the recipe and story at Trading Kitchen.",
-      "url": "https://tradingkitchen.org/zaprezna_soup.html"
+      "url": "https://tradingkitchen.org/zaprezna_soup.html",
+      "mainEntityOfPage": "https://tradingkitchen.org/zaprezna_soup.html",
+      "image": [
+        "https://tradingkitchen.org/zaprezna_soup.jpg"
+      ],
+      "recipeIngredient": [
+        "2-3 Tbsp. fat (lard, butter, or oil)",
+        "2-3 Tbsp. flour (for the roux)",
+        "1 tsp. caraway seeds (or paprika)",
+        "Salt and pepper",
+        "6-8 cups water or broth",
+        "1 or 2 eggs",
+        "~1 cup flour (or enough to make a thick batter)",
+        "Pinch of salt"
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Make the roux (Zaprezna): In a soup pot, melt the fat over medium heat. Whisk in the flour and cook, stirring constantly, until it turns a light golden brown (1-2 minutes).",
+          "url": "https://tradingkitchen.org/zaprezna_soup.html#step-1"
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Add the caraway seeds, salt, and pepper, and stir for another 30 seconds.",
+          "url": "https://tradingkitchen.org/zaprezna_soup.html#step-2"
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Slowly whisk in the water or broth. Be careful, as it will steam. Bring to a boil, then reduce to a simmer.",
+          "url": "https://tradingkitchen.org/zaprezna_soup.html#step-3"
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Make the dumplings: In a small bowl, beat the eggs. Add the salt and slowly mix in the flour until you have a thick, sticky batter (thicker than pancake batter).",
+          "url": "https://tradingkitchen.org/zaprezna_soup.html#step-4"
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Drop small spoonfuls of the dumpling batter directly into the simmering soup. They will cook quickly.",
+          "url": "https://tradingkitchen.org/zaprezna_soup.html#step-5"
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Simmer for another 10-15 minutes until the dumplings are cooked through. Taste and adjust seasoning.",
+          "url": "https://tradingkitchen.org/zaprezna_soup.html#step-6"
+        }
+      ]
     }
   ]
 }
@@ -60,7 +109,7 @@
             font-weight: 700;
         }
             img {
-            filter: grayscale(100%) sepia(100%);
+            filter: none;
         }
 
         /* Vignette and Radial Blur Effects (Background Layer) */
@@ -120,6 +169,8 @@
             <h1 class="text-4xl md:text-6xl font-bold mb-6">Zaprezna Soup</h1>
             <a href="#recipe-section" class="inline-block font-bold underline mb-2 print:hidden">Jump to recipe &darr;</a>
 
+            <img src="zaprezna_soup.jpg" alt="Zaprezna soup with golden caraway broth and egg-and-flour dumplings" class="w-full rounded-lg shadow-lg my-8 border-2 border-black print:hidden" decoding="async">
+
             
             <!-- Share Icons -->
             <div class="flex flex-wrap items-center gap-2 my-6 print:hidden border-b border-gray-200 pb-4">
@@ -153,6 +204,8 @@
             <section id="recipe-section" class="my-8">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 border-b-2 border-gray-300 pb-2">The Recipe</h2>
                 
+                <img src="zaprezna_soup.jpg" alt="Zaprezna soup with golden caraway broth and egg-and-flour dumplings" class="hidden print:block w-48 h-48 object-cover rounded-lg shadow-none my-4 border-2 border-black float-right ml-4" decoding="async">
+
                 <h3 class="text-2xl font-bold mt-6 mb-2">Ingredients</h3>
                 <p class="text-lg">(Quantities are approximate, as they depend on the maker's intuition)</p>
                 <ul class="list-disc list-inside text-lg md:text-xl space-y-2">
@@ -169,12 +222,12 @@
 
                 <h3 class="text-2xl font-bold mt-6 mb-2">Instructions</h3>
                 <ol class="list-decimal list-inside text-lg md:text-xl space-y-2">
-                    <li>Make the roux (Zaprezna): In a soup pot, melt the fat over medium heat. Whisk in the flour and cook, stirring constantly, until it turns a light golden brown (1-2 minutes).</li>
-                    <li>Add the caraway seeds, salt, and pepper, and stir for another 30 seconds.</li>
-                    <li>Slowly whisk in the water or broth. Be careful, as it will steam. Bring to a boil, then reduce to a simmer.</li>
-                    <li>Make the dumplings: In a small bowl, beat the eggs. Add the salt and slowly mix in the flour until you have a thick, sticky batter (thicker than pancake batter).</li>
-                    <li>Drop small spoonfuls of the dumpling batter directly into the simmering soup. They will cook quickly.</li>
-                    <li>Simmer for another 10-15 minutes until the dumplings are cooked through. Taste and adjust seasoning.</li>
+                    <li id="step-1">Make the roux (Zaprezna): In a soup pot, melt the fat over medium heat. Whisk in the flour and cook, stirring constantly, until it turns a light golden brown (1-2 minutes).</li>
+                    <li id="step-2">Add the caraway seeds, salt, and pepper, and stir for another 30 seconds.</li>
+                    <li id="step-3">Slowly whisk in the water or broth. Be careful, as it will steam. Bring to a boil, then reduce to a simmer.</li>
+                    <li id="step-4">Make the dumplings: In a small bowl, beat the eggs. Add the salt and slowly mix in the flour until you have a thick, sticky batter (thicker than pancake batter).</li>
+                    <li id="step-5">Drop small spoonfuls of the dumpling batter directly into the simmering soup. They will cook quickly.</li>
+                    <li id="step-6">Simmer for another 10-15 minutes until the dumplings are cooked through. Taste and adjust seasoning.</li>
                 </ol>
             </section>
 
