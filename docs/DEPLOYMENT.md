@@ -32,6 +32,8 @@ Migration notes updated **October 18, 2026**. This document records public confi
 
 - The eight remaining placeholder recipe images have been replaced with local illustrations for Zaprezna Soup, Potato Soup, Tuna Fish Stew, Baked Beans, Milk Potatoes, Ash Cakes, Rice Pudding, and Hard Time Pudding. Each page includes a hero image, a print image, social image metadata, and Recipe structured data matching its visible ingredients and instructions. Existing recipe text is preserved; malformed Rice Pudding list/image tags were repaired. No timing, yield, nutrition, ratings, or product claims were added.
 
+- The Hoover Stew image was remade in a cottage kitchen scene with an enameled pot and serving bowl on a wooden table. Chipped Beef on Toast, Beef and Noodles, and Banana Bread were also remade in natural color. Their original image URLs are retained. The remaining grayscale/sepia image rules were removed from the homepage and those three recipe pages, along with the homepage’s redundant per-image overrides; all recipe images now display their natural colors while the parchment background and vignette remain. Image descriptions were updated for the new scenes, with no changes to recipe text, structured recipe content, or file counts.
+
 Update these statuses with observed results as indexing and the remaining pre-broadcast setup are completed.
 
 ## Build and deployment
