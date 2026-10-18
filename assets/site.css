@@ -1,0 +1,77 @@
+/* Shared finishing touches for the original parchment-and-print design. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: #1a1a1a;
+  color: #fdf8e6;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #805016;
+  outline-offset: 4px;
+}
+
+#logo-board {
+  font-size: clamp(1.25rem, 5vw, 3.75rem);
+}
+
+#recipe-section,
+#mission,
+[id^="step-"] {
+  scroll-margin-top: 1.5rem;
+}
+
+[id^="share-"].transition-colors,
+#copy-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+}
+
+#share-status:empty {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  .skip-link,
+  main > footer,
+  #share-status {
+    display: none !important;
+  }
+
+  #recipe-section li {
+    break-inside: avoid;
+  }
+}
