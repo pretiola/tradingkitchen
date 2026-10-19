@@ -140,7 +140,7 @@
       const includeTimeAllowance = result.timeAllowance > 0;
       calculator.querySelector('[data-time-allowance-row]').hidden = !includeTimeAllowance;
       calculator.querySelector('[data-time-break-even]').hidden = !includeTimeAllowance;
-      setText('comparisonWeight', `All ${includeTimeAllowance ? 'four' : 'three'} bars compare ${batchWeight} of cookies, on the same cost scale.`);
+      setText('comparisonWeight', `${batchWeight} per comparison.`);
       const barValues = ['cash', 'economicCost', 'packagedEquivalent', 'bakeryEquivalent'];
       const scale = Math.max(...barValues.map(name => result[name]));
       for (const name of barValues) {

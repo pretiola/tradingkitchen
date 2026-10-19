@@ -3,9 +3,9 @@ const assert = require('node:assert/strict');
 const { calculate, formatCurrency } = require('../assets/cookie-economics.js');
 
 const example = {
-  ingredientCost: 6.13,
+  ingredientCost: 4.05,
   overheadCost: 0.35,
-  bakedGrams: 700,
+  bakedGrams: 550,
   count: 16,
   packagedPrice: 4,
   packagedGrams: 300,
@@ -18,26 +18,26 @@ const near = (actual, expected) => assert.ok(Math.abs(actual - expected) < 1e-9,
 
 test('the explicit CAD $20/hour sensitivity example has independently checked totals', () => {
   const result = calculate({ ...example, hourlyValue: 20 });
-  near(result.cash, 6.48);
-  near(result.homePerCookie, 0.405);
-  near(result.homePer100g, 0.9257142857142857);
-  near(result.packagedEquivalent, 9.333333333333334);
-  near(result.bakeryEquivalent, 21);
-  near(result.economicCost, 14.813333333333333);
+  near(result.cash, 4.40);
+  near(result.homePerCookie, 0.275);
+  near(result.homePer100g, 0.80);
+  near(result.packagedEquivalent, 7.333333333333333);
+  near(result.bakeryEquivalent, 16.50);
+  near(result.economicCost, 12.733333333333333);
   near(result.timeAllowance, 8.333333333333334);
-  near(result.packagedSavings, 2.853333333333334);
-  near(result.bakerySavings, 14.52);
-  near(result.packagedBreakEvenHourly, 6.848);
-  near(result.bakeryBreakEvenHourly, 34.848);
+  near(result.packagedSavings, 2.933333333333333);
+  near(result.bakerySavings, 12.10);
+  near(result.packagedBreakEvenHourly, 7.04);
+  near(result.bakeryBreakEvenHourly, 29.04);
 });
 
 test('the default keeps family time outside the cash comparison', () => {
   const result = calculate(example);
-  near(result.cash, 6.48);
+  near(result.cash, 4.40);
   near(result.timeAllowance, 0);
-  near(result.economicCost, 6.48);
-  near(result.packagedSavings, 2.853333333333334);
-  near(result.bakerySavings, 14.52);
+  near(result.economicCost, 4.40);
+  near(result.packagedSavings, 2.933333333333333);
+  near(result.bakerySavings, 12.10);
 });
 
 test('a $12 batch costs $1.33 per large cookie or $0.75 per medium cookie without changing equal-weight costs', () => {
@@ -54,14 +54,14 @@ test('retail comparisons scale to the weighed batch, not the number of cookies',
   const result = calculate({ ...example, bakedGrams: 350 });
   near(result.packagedEquivalent, 4.666666666666667);
   near(result.bakeryEquivalent, 10.5);
-  near(result.homePer100g, 1.8514285714285714);
-  near(result.cash, 6.48);
-  near(result.economicCost, 6.48);
+  near(result.homePer100g, 1.2571428571428571);
+  near(result.cash, 4.40);
+  near(result.economicCost, 4.40);
 });
 
 test('zero active time has no hourly break-even result and adds no time cost', () => {
   const result = calculate({ ...example, activeMinutes: 0, hourlyValue: 20 });
-  near(result.economicCost, 6.48);
+  near(result.economicCost, 4.40);
   near(result.timeAllowance, 0);
   assert.equal(result.packagedBreakEvenHourly, null);
   assert.equal(result.bakeryBreakEvenHourly, null);
@@ -71,9 +71,9 @@ test('free retail comparisons retain negative savings rather than claiming a ben
   const result = calculate({ ...example, packagedPrice: 0, bakeryPrice: 0 });
   near(result.packagedEquivalent, 0);
   near(result.bakeryEquivalent, 0);
-  near(result.packagedSavings, -6.48);
-  near(result.bakerySavings, -6.48);
-  near(result.packagedBreakEvenHourly, -15.552);
+  near(result.packagedSavings, -4.40);
+  near(result.bakerySavings, -4.40);
+  near(result.packagedBreakEvenHourly, -10.56);
 });
 
 test('zero cash prices and zero time value are valid and keep calculations finite', () => {
@@ -104,10 +104,13 @@ test('extreme finite inputs cannot overflow into infinite displayed results', ()
 
 test('the default per-cookie display rounds the computed half-cent up without rounding calculations', () => {
   const result = calculate(example);
-  assert.equal(formatCurrency(result.homePerCookie), '$0.41');
-  assert.equal(formatCurrency(result.cash), '$6.48');
-  assert.notEqual(result.homePerCookie, 0.41);
-  near(result.homePerCookie, 0.405);
+  assert.equal(formatCurrency(result.homePerCookie), '$0.28');
+  assert.equal(formatCurrency(result.cash), '$4.40');
+  assert.notEqual(result.homePerCookie, 0.28);
+  near(result.homePerCookie, 0.275);
+  const large = calculate({ ...example, count: 9 });
+  near(large.homePerCookie, 0.4888888888888889);
+  assert.equal(formatCurrency(large.homePerCookie), '$0.49');
 });
 
 test('currency formatting handles sub-cent inputs and signed half-cent ties', () => {
