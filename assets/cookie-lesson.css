@@ -1,0 +1,60 @@
+/* Recipe-specific editorial tables and budget tools. */
+#economic-lesson, .cookie-lesson section { scroll-margin-top: 1.5rem; }
+.cookie-lesson { font-size: 1.2rem; line-height: 1.7; }
+.cookie-lesson p { margin: 1rem 0; }
+.cookie-lesson h3 { margin: 2.5rem 0 1rem; font-size: clamp(1.45rem, 3vw, 1.9rem); line-height: 1.3; }
+.cookie-lesson h4 { margin: 1.5rem 0 .65rem; font-size: 1.2rem; line-height: 1.4; }
+.cookie-lesson a { text-decoration: underline; text-underline-offset: .18em; }
+.lesson-contents { display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; padding: 1rem 0; margin: 1.5rem 0; border-block: 1px solid #b4a28a; font-size: 1rem; }
+.lesson-table-wrap { max-width: 100%; overflow-x: auto; margin: 1.5rem 0; }
+.lesson-table-wrap:focus-visible, .cookie-lesson summary:focus-visible, .cookie-lesson select:focus-visible { outline: 3px solid #805016; outline-offset: 4px; }
+.cookie-lesson table { width: 100%; min-width: 32rem; border-collapse: collapse; font-size: 1rem; line-height: 1.5; text-align: left; }
+.cookie-lesson caption { text-align: left; font-weight: 700; margin-bottom: .6rem; }
+.cookie-lesson th, .cookie-lesson td { padding: .7rem .6rem; vertical-align: top; border-bottom: 1px solid #d6cbbb; }
+.cookie-lesson thead th, .cookie-lesson tfoot th, .cookie-lesson tfoot td { background: #f6f0e5; }
+.cookie-lesson tbody th { font-weight: 700; }
+.cookie-lesson .lesson-note, .cookie-lesson .lesson-source { font-size: 1rem; line-height: 1.6; color: #494035; }
+.lesson-callout { margin: 1.5rem 0; padding: .5rem 1.25rem; border-left: 4px solid #805016; background: #faf5eb; }
+.lesson-callout h4 { margin-top: .65rem; }
+.lesson-figure { margin: 1.75rem 0; }
+.lesson-figure figcaption { margin-bottom: 1rem; font-size: 1rem; }
+.lesson-cost-stack { display: flex; height: 1.8rem; width: 100%; }
+.cost-chocolate { background: #67412d; }
+.cost-butter { background: #b98732; }
+.cost-other { background: #c4baaa; }
+.lesson-legend { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; margin: .75rem 0; padding: 0; list-style: none; font-size: 1rem; }
+.lesson-legend li { display: flex; align-items: center; gap: .45rem; }
+.legend-dot { display: inline-block; width: .8rem; height: .8rem; }
+.lesson-calculator { margin: 1.75rem 0; padding: 1.5rem; background: #faf6ee; border: 1px solid #b4a28a; border-radius: .4rem; }
+.lesson-calculator h3 { margin-top: 0; }
+.lesson-calculator fieldset { border: 0; margin: 1.25rem 0; padding: 0; min-width: 0; }
+.lesson-calculator legend { font-weight: 700; margin-bottom: .6rem; }
+.lesson-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1rem 0; }
+.lesson-field { min-width: 0; }
+.lesson-field label, .lesson-field dt { display: block; font-size: 1rem; line-height: 1.45; margin-bottom: .35rem; }
+.lesson-field dd { margin: 0; font-size: 1.2rem; font-weight: 700; }
+.lesson-field input, .lesson-field select { display: block; width: 100%; min-height: 2.8rem; padding: .55rem .65rem; font: inherit; font-size: 1rem; line-height: 1.4; border: 1px solid #766653; border-radius: .2rem; background: #fff; color: #1a1a1a; }
+.lesson-field input[aria-invalid="true"] { outline: 2px solid #9b2424; }
+.lesson-calculator button { min-height: 2.8rem; margin: .6rem 0; padding: .55rem .9rem; border: 1px solid #4d3923; border-radius: .2rem; color: #fff; background: #4d3923; font: inherit; font-size: 1rem; cursor: pointer; }
+.lesson-calculator button:disabled { cursor: default; opacity: .6; }
+.lesson-calculator summary { cursor: pointer; font-size: 1rem; font-weight: 700; padding: .75rem 0; }
+.lesson-calculator [hidden] { display: none !important; }
+.lesson-bar-row { margin: 1rem 0; }
+.lesson-bar-row > div:first-child { display: flex; justify-content: space-between; gap: .5rem; font-size: 1rem; line-height: 1.5; margin-bottom: .35rem; }
+.lesson-bar-row strong { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.lesson-bar-track { height: 1.15rem; background: #e6ded1; }
+.lesson-bar-fill { display: block; height: 100%; background: #67412d; }
+.lesson-bar-fill[data-bar="economicCost"] { background: #a27035; }
+.lesson-bar-fill[data-bar="packagedEquivalent"], .lesson-bar-fill[data-bar="bakeryEquivalent"] { background: #72756a; }
+.lesson-portion-row { margin: 1.1rem 0; font-size: 1rem; }
+.portion-parts { display: grid; gap: .25rem; height: 1.5rem; margin-top: .5rem; }
+.parts-nine { grid-template-columns: repeat(9, minmax(0, 1fr)); }
+.parts-sixteen { grid-template-columns: repeat(16, minmax(0, 1fr)); }
+.portion-parts i { background: #e6ded1; }
+.portion-parts i:first-child { background: #67412d; }
+@media (max-width: 640px) {
+    .cookie-lesson { font-size: 1.1rem; }
+    .lesson-calculator { padding: 1rem; }
+    .lesson-fields { grid-template-columns: 1fr; }
+    .lesson-bar-row > div:first-child { flex-wrap: wrap; }
+}

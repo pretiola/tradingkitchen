@@ -101,58 +101,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'EB Garamond', serif;
-            background-color: #fdf8e6; /* Warm Yellowish Parchment */
-            color: #1a1a1a;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Merriweather', serif;
-            font-weight: 700;
-        }
-
-        /* Vignette and Radial Blur Effects (Background Layer) */
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: -2;
-            background-color: #fdf8e6;
-        }
-
-        body::after {
-            content: "";
-            position: fixed;
-            inset: -100px; /* Bleed out to avoid Safari edge issues */
-            pointer-events: none;
-            z-index: -1;
-            background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.4) 100%);
-            /* Subtle blur on the background itself */
-            filter: blur(10px);
-            -webkit-filter: blur(10px);
-        }
-
-        @media print {
-            html, body {
-                background-color: #FFFFFF !important;
-                background: #FFFFFF !important;
-                color: #000000 !important;
-            }
-            body::before, body::after {
-                display: none !important;
-            }
-        }
-    </style>
     <link rel="stylesheet" href="assets/site.css">
     <link rel="icon" type="image/png" href="T.png">
 </head>
-<body class="antialiased leading-relaxed">
+<body class="recipe-page antialiased leading-relaxed">
     <a class="skip-link" href="#main-content">Skip to content</a>
 
     <!-- Container -->
-    <main id="main-content" class="container mx-auto max-w-3xl p-6 md:p-12">
+    <main id="main-content" class="recipe-page-container">
         <!-- Backlink and Print Button -->
         <div class="flex justify-between items-center print:hidden">
             <a href="index.html" class="text-lg text-gray-800 hover:underline">&larr; Back to The Pantry</a>
@@ -164,12 +120,12 @@
             </button>
         </div>
 
-        <article class="bg-white p-8 md:p-12 rounded-lg shadow-xl border-2 border-black mt-8">
+        <article class="recipe-card">
             
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">Chipped Beef on Toast</h1>
+            <h1 class="recipe-title">Chipped Beef on Toast</h1>
             <a href="#recipe-section" class="inline-block font-bold underline mb-2 print:hidden">Jump to recipe &darr;</a>
 
-            <img src="sos.jpg?v=e309c555b2" alt="Dried beef in creamy milk gravy over white-bread toast" class="w-full rounded-lg shadow-lg my-8 border-2 border-black print:hidden" decoding="async">
+            <img src="sos.jpg?v=e309c555b2" alt="Dried beef in creamy milk gravy over white-bread toast" class="recipe-hero print:hidden" decoding="async">
 
             
             <!-- Share Icons -->
@@ -204,7 +160,7 @@
             <section id="recipe-section" class="my-8">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 border-b-2 border-gray-300 pb-2">The Recipe</h2>
 
-                <img src="sos.jpg?v=e309c555b2" alt="Dried beef in creamy milk gravy over white-bread toast" class="hidden print:block w-48 h-48 object-cover rounded-lg shadow-none my-4 border-2 border-black float-right ml-4" decoding="async">
+                <img src="sos.jpg?v=e309c555b2" alt="Dried beef in creamy milk gravy over white-bread toast" class="recipe-print-image hidden print:block" decoding="async">
                 
                 <h3 class="text-2xl font-bold mt-6 mb-2">Ingredients</h3>
                 <ul class="list-disc list-inside text-lg md:text-xl space-y-2">
@@ -239,6 +195,7 @@
                 </div>
             </section>
 
+            <footer class="recipe-print-footer">Trading Kitchen · https://tradingkitchen.org</footer>
         </article>
         
         <!-- Footer -->

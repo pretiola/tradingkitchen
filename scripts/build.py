@@ -2,6 +2,7 @@
 """Stage only public website files for GitHub Pages."""
 from pathlib import Path
 import shutil
+import subprocess
 
 ROOT = Path(__file__).resolve().parent.parent
 OUTPUT = ROOT / "_site"
@@ -34,6 +35,7 @@ def main() -> None:
                 if asset.is_file() and asset.suffix.lower() in PUBLIC_EXTENSIONS:
                     copy_public_file(asset)
     (OUTPUT / ".nojekyll").write_text("", encoding="utf-8")
+    subprocess.run(["node", "scripts/optimize-images.mjs"], cwd=ROOT, check=True)
     print(f"Staged {sum(path.is_file() for path in OUTPUT.rglob('*'))} public files in _site/")
 
 

@@ -1,4 +1,73 @@
-/* Shared finishing touches for the original parchment-and-print design. */
+/* Shared typography, recipe layout and printing for the whole site. */
+body {
+  font-family: 'EB Garamond', Georgia, serif;
+  background: #fdf8e6;
+  color: #1a1a1a;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', Georgia, serif;
+  font-weight: 700;
+}
+
+body::before, body::after {
+  content: "";
+  position: fixed;
+  pointer-events: none;
+}
+
+body::before {
+  inset: 0;
+  z-index: -2;
+  background: #fdf8e6;
+}
+
+body::after {
+  inset: -100px;
+  z-index: -1;
+  background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, .4) 100%);
+  filter: blur(10px);
+}
+
+.recipe-page-container {
+  width: 100%;
+  max-width: 64rem;
+  margin-inline: auto;
+  padding: 1.5rem 1rem;
+}
+
+.recipe-card {
+  margin-top: 2rem;
+  padding: 1.5rem 1.25rem;
+  background: #fff;
+  border: 2px solid #1a1a1a;
+  border-radius: .5rem;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / .1), 0 8px 10px -6px rgb(0 0 0 / .1);
+}
+
+.recipe-title {
+  margin-bottom: 1.5rem;
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  line-height: 1.1;
+  overflow-wrap: break-word;
+}
+
+.recipe-hero {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-block: 2rem;
+  border: 2px solid #1a1a1a;
+  border-radius: .5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / .1);
+}
+
+.recipe-print-footer { display: none; }
+
+@media (min-width: 768px) {
+  .recipe-page-container, .recipe-card { padding: 3rem; }
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -65,13 +134,91 @@ input:focus-visible {
 }
 
 @media print {
+  @page { margin: 12mm; }
+
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  body::before, body::after { display: none !important; }
+
   .skip-link,
   main > footer,
   #share-status {
     display: none !important;
   }
 
-  #recipe-section li {
+  .recipe-page { font-size: 11pt; line-height: 1.3; }
+
+  .recipe-page-container, .recipe-card {
+    display: block;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .recipe-card > :not(h1):not(#recipe-section):not(.recipe-print-footer) {
+    display: none !important;
+  }
+
+  .recipe-title { font-size: 21pt; line-height: 1.15; margin: 0 0 12pt; }
+
+  #recipe-section {
+    margin: 0;
+    padding: 0;
+    columns: auto;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  #recipe-section :is(.text-lg, .text-xl) { font-size: inherit; line-height: inherit; }
+  #recipe-section h2 { margin: 0 0 6pt; padding: 0; border: 0; font-size: 14pt; line-height: 1.2; }
+  #recipe-section h3 { margin: 10pt 0 5pt; font-size: 12pt; line-height: 1.2; }
+  #recipe-section h4 { margin: 6pt 0 3pt; font-size: 11pt; line-height: 1.2; }
+  #recipe-section :is(h2, h3, h4) { break-after: avoid; break-inside: avoid; }
+  #recipe-section h3:not(:first-of-type) { clear: both; }
+  #recipe-section :is(ul, ol) { margin: 0; padding-left: 5mm; list-style-position: outside; }
+  #recipe-section li { break-inside: avoid; margin: 0; padding-left: 1mm; }
+  #recipe-section li + li { margin-top: 3pt; }
+  #recipe-section p { margin: 5pt 0; orphans: 3; widows: 3; }
+
+  #recipe-section .recipe-facts {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8pt;
+    margin: 8pt 0;
+    text-align: left;
     break-inside: avoid;
+  }
+
+  #recipe-section .recipe-facts :is(h4, p, dt, dd) { margin: 0; font-size: 10pt; line-height: 1.3; }
+
+  .recipe-print-image {
+    display: block;
+    float: right;
+    width: 33mm;
+    height: 33mm;
+    object-fit: cover;
+    margin: 0 0 3mm 5mm;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .recipe-print-footer {
+    display: block;
+    clear: both;
+    margin-top: 12pt;
+    padding: 0;
+    border: 0;
+    font-size: 8pt;
+    text-align: left;
   }
 }

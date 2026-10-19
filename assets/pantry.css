@@ -1,0 +1,62 @@
+.hero-image {
+    background-image: url('../cta.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 4px solid #1a1a1a;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+}
+
+/* Flip Board Logo Aesthetic */
+.flip-board {
+    display: inline-flex;
+    flex-direction: column; /* Stacked by default for grid look */
+    align-items: center;
+    gap: 16px; /* Row gap for stacked mode */
+    perspective: 1000px;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 1520px) {
+    .flip-board {
+        flex-direction: row; /* Single line only on very wide screens */
+        align-items: center;
+        gap: 24px;
+        margin-bottom: 1rem;
+    }
+}
+
+.flip-tile {
+    background: #1a1a1a;
+    color: #fdf8e6;
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    padding: 8px 0; /* Vertical padding only */
+    border-radius: 4px;
+    position: relative;
+    display: inline-flex; /* Use flex for centering */
+    align-items: center;
+    justify-content: center;
+    width: 1.5em; /* Fixed width for better grid feel */
+    height: 1.5em; /* Balanced height */
+    text-align: center;
+    box-shadow: 0 4px 0 #000;
+    border-bottom: 1px solid #333;
+}
+.flip-tile::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.5);
+}
+
+@keyframes flip-in {
+    0% { transform: rotateX(-90deg); opacity: 0; }
+    100% { transform: rotateX(0deg); opacity: 1; }
+}
+.flip-tile {
+    animation: flip-in 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}

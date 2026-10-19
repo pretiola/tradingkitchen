@@ -144,6 +144,26 @@ def check_newsletter(page):
     check(not any(field.get("formaction") or "formnovalidate" in field for field in form["fields"]), "index.html: signup fields must preserve the provider endpoint and validation")
 
 
+def check_recipe_layout(page):
+    """Keep recipes on the shared layout and require complete responsive images."""
+    if "recipe-section" not in page.ids:
+        return
+    def with_class(tag, name):
+        return [attrs for attrs in page.attributes(tag) if name in attrs.get("class", "").split()]
+
+    check(len(with_class("body", "recipe-page")) == 1, f"{page.name}: missing shared recipe body")
+    containers = with_class("main", "recipe-page-container")
+    check(len(containers) == 1 and containers[0].get("class") == "recipe-page-container", f"{page.name}: recipe width must use the shared container")
+    cards = with_class("article", "recipe-card")
+    check(len(cards) == 1 and cards[0].get("class") == "recipe-card", f"{page.name}: recipe card must use shared screen/print styles")
+    check(len(with_class("h1", "recipe-title")) == 1, f"{page.name}: missing shared recipe title")
+    check(len(with_class("img", "recipe-hero")) == 1, f"{page.name}: expected one recipe hero")
+    check(len(with_class("img", "recipe-print-image")) == 1, f"{page.name}: expected one print thumbnail")
+    check(len(with_class("footer", "recipe-print-footer")) == 1, f"{page.name}: expected one shared print footer")
+    check(not any(element == "style" for element, _ in page.tags), f"{page.name}: use shared stylesheets instead of page-local layout/print rules")
+    check(any(re.search(r"/site(?:\.[0-9a-f]+)?\.css$", urlsplit(attrs.get("href", "")).path) for attrs in page.attributes("link")), f"{page.name}: missing shared site stylesheet")
+
+
 def main():
     check(SITE.is_dir(), f"Missing build output: {SITE}; run npm run build first")
     if not SITE.is_dir():
@@ -154,6 +174,7 @@ def main():
     for page in pages:
         if page.name == "index.html":
             check_newsletter(page)
+        check_recipe_layout(page)
         html = page.attributes("html")
         check(len(html) == 1 and bool(html[0].get("lang")), f"{page.name}: missing document language")
         check(bool(page.attributes("title")), f"{page.name}: missing title")
@@ -164,6 +185,16 @@ def main():
             check(any(attrs.get("type") == "application/ld+json" for attrs, _ in page.scripts), f"{page.name}: missing structured data")
         check(not any("cdn.tailwindcss.com" in attrs.get("src", "") for attrs in page.attributes("script")), f"{page.name}: development Tailwind CDN is still enabled")
         for tag, attrs in page.tags:
+            if tag == "img":
+                check(bool(attrs.get("alt")), f"{page.name}: image needs descriptive alt text")
+                check(all(attrs.get(size, "").isdigit() and int(attrs[size]) > 0 for size in ("width", "height")), f"{page.name}: image needs intrinsic width and height")
+                check(bool(attrs.get("srcset")) and bool(attrs.get("sizes")), f"{page.name}: image needs responsive srcset and sizes")
+            if attrs.get("srcset"):
+                for candidate in attrs["srcset"].split(","):
+                    fields = candidate.strip().split()
+                    check(len(fields) == 2 and bool(re.fullmatch(r"[1-9][0-9]*w", fields[-1])), f"{page.name}: invalid width-based srcset candidate {candidate}")
+                    if fields:
+                        local_target(fields[0], page.url, page.name)
             for attribute in ("href", "src", "poster", "action"):
                 if not attrs.get(attribute):
                     continue
