@@ -1,0 +1,60 @@
+{
+  "page": "chipped_beef.html",
+  "default_portion": "plate",
+  "portions": [
+    {
+      "id": "plate",
+      "count": 4,
+      "label": "2 toast slices with 1/4 sauce",
+      "batch_label": "4 servings"
+    }
+  ],
+  "ingredients": [
+    {
+      "recipe_text": "8 oz. dried beef, \"chipped\" or torn into small pieces",
+      "food": "dried_beef",
+      "grams": 226.796185,
+      "weight_source": "https://www.nist.gov/sites/default/files/documents/calibrations/tn577.pdf",
+      "basis": "Beef, cured, dried; 8 oz × 28.349523125 g/oz"
+    },
+    {
+      "recipe_text": "2 Tbsp. butter or oil",
+      "food": "unsalted_butter",
+      "grams": 28.4,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/173430/nutrients",
+      "basis": "Butter, without salt; 2 tablespoons × 14.2 g; food_portion 92512"
+    },
+    {
+      "recipe_text": "4 Tbsp. flour",
+      "food": "all_purpose_flour",
+      "grams": 30,
+      "weight_source": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart",
+      "basis": "Wheat flour, white, all-purpose, enriched, unbleached; 4 tbsp =1/4 US cup; King Arthur120g/cup×1/4"
+    },
+    {
+      "recipe_text": "4 cups milk (whole milk is best)",
+      "food": "whole_milk",
+      "grams": 976,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/171265/nutrients",
+      "basis": "Milk, whole, 3.25% milkfat, with added vitamin D; 4 cups ×244g; food_portion88314"
+    },
+    {
+      "recipe_text": "Salt and pepper to taste",
+      "excluded": true,
+      "reason": "No additional table salt included; dried-beef sodium remains fully counted."
+    },
+    {
+      "recipe_text": "8 slices of bread, toasted (the \"shingle\")",
+      "food": "white_bread",
+      "grams": 232,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/174924/nutrients",
+      "basis": "Bread, white, commercially prepared (includes soft bread crumbs); 8 slices ×29g before toasting; USDA food_portion95169"
+    }
+  ],
+  "notes": [
+    "Serving: 2 slices of toast with 1/4 of the sauce. Makes 4 servings.",
+    "Uses unsalted butter, whole milk and white-bread slices weighing 29 g each before toasting. Excludes additional salt and pepper.",
+    "Dried-beef sodium is fully counted. Optional soaking may remove some salt, but that reduction is not assumed.",
+    "Ingredient weights are estimates. Finished batch and toasted-bread weights have not been measured."
+  ]
+}

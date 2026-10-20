@@ -1,0 +1,73 @@
+{
+  "page": "potato_soup.html",
+  "default_portion": "standard",
+  "portions": [
+    {
+      "id": "standard",
+      "count": 8,
+      "label": "1 bowl",
+      "batch_label": "8 bowls",
+      "fraction": "1/8 of recipe"
+    }
+  ],
+  "ingredients": [
+    {
+      "recipe_text": "4 large potatoes, peeled and sliced/cubed",
+      "food": "potato_peeled_raw",
+      "grams": 1107,
+      "weight_source": "https://food-nutrition.canada.ca/cnf-fce/serving-portion?id=2417&lang=eng",
+      "basis": "About 1.1 kg raw peeled flesh: 4 large potatoes × 369 g × 75% edible yield. Weigh after peeling when possible."
+    },
+    {
+      "recipe_text": "1 onion, chopped (if available)",
+      "food": "onion_raw",
+      "grams": 110,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/170000/nutrients",
+      "basis": "1 medium onion: 110 g."
+    },
+    {
+      "recipe_text": "1-2 carrots, sliced (if available)",
+      "food": "carrot",
+      "grams": 122,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/170393/nutrients",
+      "basis": "2 medium carrots: 61 g each."
+    },
+    {
+      "recipe_text": "1 can of meat, sausage, or hot dogs, sliced (optional)",
+      "excluded": true,
+      "reason": "optional canned meat; this estimate is the vegetable-and-milk version"
+    },
+    {
+      "recipe_text": "3 cups water or stock",
+      "excluded": true,
+      "reason": "calculated with water; stock is not included"
+    },
+    {
+      "recipe_text": "3 cups milk",
+      "food": "whole_milk",
+      "grams": 732,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/171265/nutrients",
+      "basis": "Whole milk: 3 US cups × 244 g."
+    },
+    {
+      "recipe_text": "Salt and pepper to taste",
+      "food": "salt",
+      "grams": 3,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/173468/nutrients",
+      "basis": "½ tsp table salt: 3 g for the whole batch; unmeasured pepper excluded."
+    },
+    {
+      "recipe_text": "(Optional: 2 Tbsp. butter or lard)",
+      "food": "unsalted_butter",
+      "grams": 28.4,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/173430/nutrients",
+      "basis": "Unsalted butter: 2 tbsp × 14.2 g."
+    }
+  ],
+  "notes": [
+    "Eight bowls; nutrition is for 1/8 of the batch. Finished weight and volume are unmeasured.",
+    "Uses about 1.1 kg peeled potatoes, one medium onion, 2 medium carrots, 3 cups whole milk, 2 tbsp unsalted butter, and water. Optional meat is excluded.",
+    "Peeled-potato nutrients come from Health Canada’s Canadian Nutrient File; other ingredients use USDA records.",
+    "Includes ½ tsp salt. Unmeasured pepper is excluded; more salt or stock changes sodium."
+  ]
+}

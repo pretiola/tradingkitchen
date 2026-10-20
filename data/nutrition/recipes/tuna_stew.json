@@ -1,0 +1,79 @@
+{
+  "page": "tuna_stew.html",
+  "default_portion": "standard",
+  "portions": [
+    {
+      "id": "standard",
+      "count": 8,
+      "label": "1 bowl, without bread",
+      "batch_label": "8 bowls",
+      "fraction": "1/8 of recipe"
+    }
+  ],
+  "ingredients": [
+    {
+      "recipe_text": "2-3 ribs of celery, chopped",
+      "food": "celery",
+      "grams": 120,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/169988/nutrients",
+      "basis": "3 medium celery stalks: 40 g each."
+    },
+    {
+      "recipe_text": "3-4 medium potatoes, chopped",
+      "food": "potato_raw",
+      "grams": 852,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/170026/nutrients",
+      "basis": "4 medium potatoes with skin: 213 g each."
+    },
+    {
+      "recipe_text": "2 cans (5 oz) canned tuna fish (in oil or water)",
+      "food": "tuna_water",
+      "grams": 226,
+      "weight_source": "https://www.bumblebee.com/products/tuna/bumble-bee-chunk-light-tuna-in-water/",
+      "basis": "2 water-packed 5 oz cans, drained: 113 g tuna each."
+    },
+    {
+      "recipe_text": "2-3 hard-boiled eggs, chopped",
+      "food": "egg_hard_boiled",
+      "grams": 150,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/173424/nutrients",
+      "basis": "3 large hard-boiled eggs: 50 g each."
+    },
+    {
+      "recipe_text": "2-3 cups milk",
+      "food": "whole_milk",
+      "grams": 732,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/171265/nutrients",
+      "basis": "Whole milk: 3 US cups × 244 g."
+    },
+    {
+      "recipe_text": "Water (as needed)",
+      "excluded": true,
+      "reason": "water adds no nutrients; use enough to cover potatoes"
+    },
+    {
+      "recipe_text": "Salt and pepper to taste",
+      "food": "salt",
+      "grams": 3,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/173468/nutrients",
+      "basis": "½ tsp table salt: 3 g for the whole batch; unmeasured pepper excluded."
+    },
+    {
+      "recipe_text": "(Optional: 1 Tbsp. butter or lard)",
+      "food": "unsalted_butter",
+      "grams": 14.2,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/173430/nutrients",
+      "basis": "Unsalted butter: 1 tbsp × 14.2 g."
+    },
+    {
+      "recipe_text": "Stale bread or toast, for serving",
+      "excluded": true,
+      "reason": "bread or toast served separately"
+    }
+  ],
+  "notes": [
+    "Eight bowls; nutrition is for 1/8 of the batch. Finished weight and volume are unmeasured.",
+    "Uses 3 medium celery stalks, 4 medium potatoes with skin, 226 g drained water-packed tuna, 3 large hard-boiled eggs, 3 cups whole milk and 1 tbsp unsalted butter. Bread is excluded.",
+    "Includes ½ tsp salt. Unmeasured pepper is excluded; extra salt changes sodium."
+  ]
+}

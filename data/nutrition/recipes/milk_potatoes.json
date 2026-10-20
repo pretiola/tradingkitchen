@@ -1,0 +1,55 @@
+{
+  "page": "milk_potatoes.html",
+  "default_portion": "standard",
+  "portions": [
+    {
+      "id": "standard",
+      "count": 6,
+      "label": "1 side portion",
+      "batch_label": "6 side portions",
+      "fraction": "1/6 of recipe"
+    }
+  ],
+  "ingredients": [
+    {
+      "recipe_text": "4-5 medium potatoes, sliced thin",
+      "food": "potato_raw",
+      "grams": 852,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/170026/nutrients",
+      "basis": "4 medium potatoes with skin: 213 g each."
+    },
+    {
+      "recipe_text": "1 onion, sliced thin",
+      "food": "onion_raw",
+      "grams": 110,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/170000/nutrients",
+      "basis": "1 medium onion: 110 g."
+    },
+    {
+      "recipe_text": "2 Tbsp. lard, bacon fat, or butter",
+      "food": "unsalted_butter",
+      "grams": 28.4,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/173430/nutrients",
+      "basis": "Unsalted butter: 2 tbsp × 14.2 g."
+    },
+    {
+      "recipe_text": "Salt and pepper",
+      "food": "salt",
+      "grams": 3,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/173468/nutrients",
+      "basis": "½ tsp table salt: 3 g for the whole batch; unmeasured pepper excluded."
+    },
+    {
+      "recipe_text": "~2 cups milk (enough to just cover the potatoes)",
+      "food": "whole_milk",
+      "grams": 488,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/171265/nutrients",
+      "basis": "Whole milk: 2 US cups × 244 g."
+    }
+  ],
+  "notes": [
+    "Six side portions; nutrition is for 1/6 of the batch. Finished weight is unmeasured.",
+    "Uses 4 medium potatoes with skin, one medium onion, 2 tbsp unsalted butter and 2 cups whole milk.",
+    "Includes ½ tsp salt. Unmeasured pepper is excluded; extra salt or milk changes the estimate."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "page": "ash_cakes.html",
+  "default_portion": "cake",
+  "portions": [
+    {
+      "id": "cake",
+      "count": 4,
+      "label": "1 cake",
+      "batch_label": "4 cakes"
+    }
+  ],
+  "ingredients": [
+    {
+      "recipe_text": "1 cup cornmeal",
+      "food": "whole_grain_cornmeal",
+      "grams": 138,
+      "weight_source": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart",
+      "basis": "1 cup = 138 g whole cornmeal"
+    },
+    {
+      "recipe_text": "½ cup meat stock or water (or just enough to make a stiff dough)",
+      "food": "water",
+      "grams": 118.5,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/173647/nutrients",
+      "basis": "1/2 cup water × USDA 237 g per 8 fl oz"
+    },
+    {
+      "recipe_text": "2 Tbsp. lard or bacon grease, melted",
+      "food": "lard",
+      "grams": 25.6,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/171401/nutrients",
+      "basis": "2 Tbsp lard × USDA 12.8 g/Tbsp"
+    },
+    {
+      "recipe_text": "(Optional: 1/2 tsp salt)",
+      "excluded": true,
+      "reason": "Optional salt is not included."
+    }
+  ],
+  "notes": [
+    "Shape the batch into 4 equal cakes; one cake is one serving.",
+    "Uses whole-grain yellow cornmeal, water and lard. Optional salt is excluded.",
+    "Includes all cooking fat, although some may remain in the pan. Stock, bacon grease and added salt change these values. Finished cake weight has not been measured."
+  ]
+}

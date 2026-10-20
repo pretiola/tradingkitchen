@@ -403,6 +403,1414 @@
           "grams": "2.3"
         }
       ]
+    },
+    "white_chocolate": {
+      "fdc_id": 167571,
+      "description": "Candies, white chocolate",
+      "source_url": "https://fdc.nal.usda.gov/food-details/167571/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "fat": "32.09",
+        "calcium": "199",
+        "potassium": "286",
+        "protein": "5.87",
+        "iron": "0.24",
+        "sodium": "90",
+        "saturated_fat": "19.412",
+        "sugar": "59",
+        "cholesterol": "21",
+        "trans_fat": "0",
+        "fiber": "0.2",
+        "carbohydrate": "59.24",
+        "calories": "539"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "bar (3 oz)",
+          "grams": "85"
+        },
+        {
+          "amount": "1",
+          "description": "tbsp",
+          "grams": "14"
+        },
+        {
+          "amount": "1",
+          "description": "cup chips",
+          "grams": "170"
+        }
+      ]
+    },
+    "orange_marmalade": {
+      "fdc_id": 168819,
+      "description": "Marmalade, orange",
+      "source_url": "https://fdc.nal.usda.gov/food-details/168819/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "protein": "0.3",
+        "fiber": "0.7",
+        "cholesterol": "0",
+        "calories": "246",
+        "saturated_fat": "0",
+        "fat": "0",
+        "carbohydrate": "66.3",
+        "calcium": "38",
+        "potassium": "37",
+        "iron": "0.15",
+        "sodium": "56",
+        "sugar": "60"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "tbsp",
+          "grams": "20"
+        },
+        {
+          "amount": "1",
+          "description": "package (0.5 oz)",
+          "grams": "14"
+        },
+        {
+          "amount": "1",
+          "description": "serving",
+          "grams": "20"
+        },
+        {
+          "amount": "1",
+          "description": "cup",
+          "grams": "320"
+        }
+      ]
+    },
+    "molasses": {
+      "fdc_id": 168820,
+      "description": "Molasses",
+      "source_url": "https://fdc.nal.usda.gov/food-details/168820/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "saturated_fat": "0.018",
+        "carbohydrate": "74.73",
+        "calories": "290",
+        "iron": "4.72",
+        "sodium": "37",
+        "fat": "0.1",
+        "calcium": "205",
+        "potassium": "1464",
+        "sugar": "74.72",
+        "cholesterol": "0",
+        "fiber": "0",
+        "protein": "0"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "cup",
+          "grams": "337"
+        },
+        {
+          "amount": "1",
+          "description": "serving 1 tbsp",
+          "grams": "20"
+        }
+      ]
+    },
+    "cooked_white_rice": {
+      "fdc_id": 168878,
+      "description": "Rice, white, long-grain, regular, enriched, cooked",
+      "source_url": "https://fdc.nal.usda.gov/food-details/168878/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "sugar": "0.05",
+        "fiber": "0.4",
+        "iron": "1.2",
+        "sodium": "1",
+        "cholesterol": "0",
+        "saturated_fat": "0.077",
+        "protein": "2.69",
+        "calcium": "10",
+        "potassium": "35",
+        "fat": "0.28",
+        "carbohydrate": "28.17",
+        "calories": "130"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "cup",
+          "grams": "158"
+        }
+      ]
+    },
+    "creamed_corn_canned": {
+      "fdc_id": 169215,
+      "description": "Corn, sweet, yellow, canned, cream style, regular pack",
+      "source_url": "https://fdc.nal.usda.gov/food-details/169215/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "carbohydrate": "18.13",
+        "calories": "72",
+        "sugar": "3.23",
+        "sodium": "261",
+        "trans_fat": "0",
+        "fiber": "1.2",
+        "iron": "0.38",
+        "saturated_fat": "0.065",
+        "protein": "1.74",
+        "cholesterol": "0",
+        "fat": "0.42",
+        "calcium": "3",
+        "potassium": "134"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "cup",
+          "grams": "256"
+        },
+        {
+          "amount": "1",
+          "description": "can (303 x 406)",
+          "grams": "482"
+        }
+      ]
+    },
+    "garlic_raw": {
+      "fdc_id": 169230,
+      "description": "Garlic, raw",
+      "source_url": "https://fdc.nal.usda.gov/food-details/169230/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "carbohydrate": "33.06",
+        "calories": "149",
+        "sugar": "1",
+        "trans_fat": "0",
+        "saturated_fat": "0.089",
+        "cholesterol": "0",
+        "fiber": "2.1",
+        "iron": "1.7",
+        "sodium": "17",
+        "protein": "6.36",
+        "calcium": "181",
+        "potassium": "401",
+        "fat": "0.5"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "cup",
+          "grams": "136"
+        },
+        {
+          "amount": "1",
+          "description": "tsp",
+          "grams": "2.8"
+        },
+        {
+          "amount": "1",
+          "description": "clove",
+          "grams": "3"
+        },
+        {
+          "amount": "3",
+          "description": "cloves",
+          "grams": "9"
+        }
+      ]
+    },
+    "honey": {
+      "fdc_id": 169640,
+      "description": "Honey",
+      "source_url": "https://fdc.nal.usda.gov/food-details/169640/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "saturated_fat": "0",
+        "protein": "0.3",
+        "fiber": "0.2",
+        "iron": "0.42",
+        "sodium": "4",
+        "cholesterol": "0",
+        "fat": "0",
+        "carbohydrate": "82.4",
+        "calories": "304",
+        "calcium": "6",
+        "potassium": "52",
+        "sugar": "82.12"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "cup",
+          "grams": "339"
+        },
+        {
+          "amount": "1",
+          "description": "tbsp",
+          "grams": "21"
+        },
+        {
+          "amount": "1",
+          "description": "packet (0.5 oz)",
+          "grams": "14"
+        }
+      ]
+    },
+    "whole_grain_cornmeal": {
+      "fdc_id": 169697,
+      "description": "Cornmeal, whole-grain, yellow",
+      "source_url": "https://fdc.nal.usda.gov/food-details/169697/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "sugar": "0.64",
+        "fat": "3.59",
+        "carbohydrate": "76.89",
+        "calories": "362",
+        "calcium": "6",
+        "potassium": "287",
+        "protein": "8.12",
+        "fiber": "7.3",
+        "iron": "3.45",
+        "sodium": "35",
+        "cholesterol": "0",
+        "saturated_fat": "0.505"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "cup",
+          "grams": "122"
+        }
+      ]
+    },
+    "egg_noodles_dry": {
+      "fdc_id": 169731,
+      "description": "Noodles, egg, dry, enriched",
+      "source_url": "https://fdc.nal.usda.gov/food-details/169731/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "carbohydrate": "71.27",
+        "calories": "384",
+        "iron": "4.01",
+        "trans_fat": "0.061",
+        "saturated_fat": "1.18",
+        "cholesterol": "84",
+        "fiber": "3.3",
+        "sodium": "21",
+        "protein": "14.16",
+        "fat": "4.44",
+        "sugar": "1.88",
+        "calcium": "35",
+        "potassium": "244"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "cup",
+          "grams": "38"
+        },
+        {
+          "amount": "2",
+          "description": "oz",
+          "grams": "57"
+        }
+      ]
+    },
+    "pasta_dry": {
+      "fdc_id": 169736,
+      "description": "Pasta, dry, enriched",
+      "source_url": "https://fdc.nal.usda.gov/food-details/169736/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "sodium": "6",
+        "sugar": "2.67",
+        "calcium": "21",
+        "potassium": "223",
+        "iron": "3.3",
+        "trans_fat": "0",
+        "saturated_fat": "0.277",
+        "carbohydrate": "74.67",
+        "calories": "371",
+        "cholesterol": "0",
+        "fat": "1.51",
+        "fiber": "3.2",
+        "protein": "13.04"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "cup spaghetti",
+          "grams": "91"
+        },
+        {
+          "amount": "2",
+          "description": "oz",
+          "grams": "57"
+        },
+        {
+          "amount": "1",
+          "description": "cup elbows",
+          "grams": "122"
+        },
+        {
+          "amount": "1",
+          "description": "cup penne",
+          "grams": "95"
+        },
+        {
+          "amount": "1",
+          "description": "cup farfalle",
+          "grams": "81"
+        },
+        {
+          "amount": "1",
+          "description": "cup rotini",
+          "grams": "96"
+        },
+        {
+          "amount": "1",
+          "description": "cup shells",
+          "grams": "64"
+        },
+        {
+          "amount": "1",
+          "description": "cup lasagna",
+          "grams": "90"
+        }
+      ]
+    },
+    "celery": {
+      "fdc_id": 169988,
+      "description": "Celery, raw",
+      "source_url": "https://fdc.nal.usda.gov/food-details/169988/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "trans_fat": "0",
+        "calories": "14",
+        "saturated_fat": "0.042",
+        "carbohydrate": "2.97",
+        "fat": "0.17",
+        "sugar": "1.34",
+        "cholesterol": "0",
+        "calcium": "40",
+        "sodium": "80",
+        "fiber": "1.6",
+        "iron": "0.2",
+        "protein": "0.69",
+        "potassium": "260"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "cup chopped",
+          "grams": "101"
+        },
+        {
+          "amount": "1",
+          "description": "NLEA serving",
+          "grams": "110"
+        },
+        {
+          "amount": "1",
+          "description": "tbsp",
+          "grams": "7.5"
+        },
+        {
+          "amount": "1",
+          "description": "stalk, large (11\"-12\" long)",
+          "grams": "64"
+        },
+        {
+          "amount": "1",
+          "description": "stalk, medium (7-1/2\" - 8\" long)",
+          "grams": "40"
+        },
+        {
+          "amount": "1",
+          "description": "stalk, small (5\" long)",
+          "grams": "17"
+        },
+        {
+          "amount": "1",
+          "description": "strip (4\" long)",
+          "grams": "4"
+        }
+      ]
+    },
+    "onion_raw": {
+      "fdc_id": 170000,
+      "description": "Onions, raw",
+      "source_url": "https://fdc.nal.usda.gov/food-details/170000/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "sugar": "4.24",
+        "calcium": "23",
+        "potassium": "146",
+        "fat": "0.1",
+        "carbohydrate": "9.34",
+        "calories": "40",
+        "saturated_fat": "0.042",
+        "protein": "1.1",
+        "fiber": "1.7",
+        "iron": "0.21",
+        "sodium": "4",
+        "trans_fat": "0",
+        "cholesterol": "0"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "cup, chopped",
+          "grams": "160"
+        },
+        {
+          "amount": "1",
+          "description": "cup, sliced",
+          "grams": "115"
+        },
+        {
+          "amount": "1",
+          "description": "tbsp chopped",
+          "grams": "10"
+        },
+        {
+          "amount": "1",
+          "description": "large",
+          "grams": "150"
+        },
+        {
+          "amount": "1",
+          "description": "slice, large (1/4\" thick)",
+          "grams": "38"
+        },
+        {
+          "amount": "1",
+          "description": "medium (2-1/2\" dia)",
+          "grams": "110"
+        },
+        {
+          "amount": "1",
+          "description": "slice, medium (1/8\" thick)",
+          "grams": "14"
+        },
+        {
+          "amount": "1",
+          "description": "small",
+          "grams": "70"
+        },
+        {
+          "amount": "1",
+          "description": "slice, thin",
+          "grams": "9"
+        },
+        {
+          "amount": "10",
+          "description": "rings",
+          "grams": "60"
+        }
+      ]
+    },
+    "potato_raw": {
+      "fdc_id": 170026,
+      "description": "Potatoes, flesh and skin, raw",
+      "source_url": "https://fdc.nal.usda.gov/food-details/170026/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "fat": "0.09",
+        "calcium": "12",
+        "cholesterol": "0",
+        "calories": "77",
+        "sodium": "6",
+        "trans_fat": "0",
+        "saturated_fat": "0.025",
+        "protein": "2.05",
+        "fiber": "2.1",
+        "iron": "0.81",
+        "carbohydrate": "17.49",
+        "potassium": "425",
+        "sugar": "0.82"
+      },
+      "portions": [
+        {
+          "amount": "0.5",
+          "description": "cup, diced",
+          "grams": "75"
+        },
+        {
+          "amount": "1",
+          "description": "Potato large (3\" to 4-1/4\" dia)",
+          "grams": "369"
+        },
+        {
+          "amount": "1",
+          "description": "Potato medium (2-1/4\" to 3-1/4\" dia)",
+          "grams": "213"
+        },
+        {
+          "amount": "1",
+          "description": "Potato small (1-3/4\" to 2-1/2\" dia)",
+          "grams": "170"
+        }
+      ]
+    },
+    "tomatoes_canned": {
+      "fdc_id": 170051,
+      "description": "Tomatoes, red, ripe, canned, packed in tomato juice",
+      "source_url": "https://fdc.nal.usda.gov/food-details/170051/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "sodium": "115",
+        "trans_fat": "0",
+        "cholesterol": "0",
+        "sugar": "2.55",
+        "calcium": "33",
+        "fat": "0.25",
+        "carbohydrate": "3.47",
+        "calories": "16",
+        "potassium": "191",
+        "saturated_fat": "0.034",
+        "fiber": "1.9",
+        "iron": "0.57",
+        "protein": "0.79"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "cup",
+          "grams": "240"
+        },
+        {
+          "amount": "1",
+          "description": "tbsp",
+          "grams": "15"
+        },
+        {
+          "amount": "1",
+          "description": "can",
+          "grams": "190"
+        },
+        {
+          "amount": "1",
+          "description": "large",
+          "grams": "164"
+        },
+        {
+          "amount": "1",
+          "description": "medium",
+          "grams": "111"
+        },
+        {
+          "amount": "1",
+          "description": "small",
+          "grams": "82"
+        }
+      ]
+    },
+    "carrot": {
+      "fdc_id": 170393,
+      "description": "Carrots, raw",
+      "source_url": "https://fdc.nal.usda.gov/food-details/170393/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "saturated_fat": "0.032",
+        "iron": "0.3",
+        "sodium": "69",
+        "protein": "0.93",
+        "fat": "0.24",
+        "calcium": "33",
+        "potassium": "320",
+        "cholesterol": "0",
+        "sugar": "4.74",
+        "carbohydrate": "9.58",
+        "calories": "41",
+        "trans_fat": "0",
+        "fiber": "2.8"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "cup chopped",
+          "grams": "128"
+        },
+        {
+          "amount": "1",
+          "description": "cup grated",
+          "grams": "110"
+        },
+        {
+          "amount": "1",
+          "description": "cup strips or slices",
+          "grams": "122"
+        },
+        {
+          "amount": "1",
+          "description": "large (7-1/4\" to 8-/1/2\" long)",
+          "grams": "72"
+        },
+        {
+          "amount": "1",
+          "description": "medium",
+          "grams": "61"
+        },
+        {
+          "amount": "1",
+          "description": "small (5-1/2\" long)",
+          "grams": "50"
+        },
+        {
+          "amount": "1",
+          "description": "slice",
+          "grams": "3"
+        },
+        {
+          "amount": "1",
+          "description": "strip large (3\" long)",
+          "grams": "7"
+        },
+        {
+          "amount": "1",
+          "description": "strip medium",
+          "grams": "4"
+        }
+      ]
+    },
+    "corn_canned": {
+      "fdc_id": 170409,
+      "description": "Corn, sweet, yellow, canned, brine pack, regular pack, solids and liquids",
+      "source_url": "https://fdc.nal.usda.gov/food-details/170409/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "iron": "0.36",
+        "sodium": "195",
+        "fat": "0.77",
+        "carbohydrate": "13.86",
+        "calories": "61",
+        "calcium": "4",
+        "potassium": "136",
+        "fiber": "1.7",
+        "protein": "1.95",
+        "sugar": "4.15",
+        "saturated_fat": "0.077",
+        "trans_fat": "0",
+        "cholesterol": "0"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "cup",
+          "grams": "256"
+        },
+        {
+          "amount": "1",
+          "description": "can (303 x 406)",
+          "grams": "482"
+        }
+      ]
+    },
+    "tomato_raw": {
+      "fdc_id": 170457,
+      "description": "Tomatoes, red, ripe, raw, year round average",
+      "source_url": "https://fdc.nal.usda.gov/food-details/170457/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "trans_fat": "0",
+        "cholesterol": "0",
+        "sugar": "2.63",
+        "carbohydrate": "3.89",
+        "calories": "18",
+        "saturated_fat": "0.028",
+        "calcium": "10",
+        "potassium": "237",
+        "fat": "0.2",
+        "fiber": "1.2",
+        "iron": "0.27",
+        "sodium": "5",
+        "protein": "0.88"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "cup cherry tomatoes",
+          "grams": "149"
+        },
+        {
+          "amount": "1",
+          "description": "cup, chopped or sliced",
+          "grams": "180"
+        },
+        {
+          "amount": "1",
+          "description": "Italian tomato",
+          "grams": "62"
+        },
+        {
+          "amount": "1",
+          "description": "cherry",
+          "grams": "17"
+        },
+        {
+          "amount": "1",
+          "description": "large whole (3\" dia)",
+          "grams": "182"
+        },
+        {
+          "amount": "1",
+          "description": "medium whole (2-3/5\" dia)",
+          "grams": "123"
+        },
+        {
+          "amount": "1",
+          "description": "slice, medium (1/4\" thick)",
+          "grams": "20"
+        },
+        {
+          "amount": "1",
+          "description": "plum tomato",
+          "grams": "62"
+        },
+        {
+          "amount": "1",
+          "description": "small whole (2-2/5\" dia)",
+          "grams": "91"
+        },
+        {
+          "amount": "1",
+          "description": "slice, thick/large (1/2\" thick)",
+          "grams": "27"
+        },
+        {
+          "amount": "1",
+          "description": "wedge (1/4 of medium tomato)",
+          "grams": "31"
+        },
+        {
+          "amount": "1",
+          "description": "slice, thin/small",
+          "grams": "15"
+        },
+        {
+          "amount": "1",
+          "description": "NLEA serving",
+          "grams": "148"
+        }
+      ]
+    },
+    "dried_beef": {
+      "fdc_id": 170604,
+      "description": "Beef, cured, dried",
+      "source_url": "https://fdc.nal.usda.gov/food-details/170604/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "calcium": "8",
+        "potassium": "235",
+        "iron": "2.42",
+        "saturated_fat": "0.95",
+        "sugar": "2.7",
+        "carbohydrate": "2.76",
+        "calories": "153",
+        "fiber": "0",
+        "cholesterol": "79",
+        "sodium": "2790",
+        "protein": "31.1",
+        "fat": "1.94"
+      },
+      "portions": [
+        {
+          "amount": "10",
+          "description": "slices",
+          "grams": "28"
+        }
+      ]
+    },
+    "heavy_cream": {
+      "fdc_id": 170859,
+      "description": "Cream, fluid, heavy whipping",
+      "source_url": "https://fdc.nal.usda.gov/food-details/170859/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "fat": "36.08",
+        "calories": "340",
+        "sugar": "2.92",
+        "calcium": "66",
+        "potassium": "95",
+        "sodium": "27",
+        "iron": "0.1",
+        "cholesterol": "113",
+        "trans_fat": "1.236",
+        "protein": "2.84",
+        "saturated_fat": "23.032",
+        "fiber": "0",
+        "carbohydrate": "2.84"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "cup, whipped",
+          "grams": "120"
+        },
+        {
+          "amount": "1",
+          "description": "cup, fluid (yields 2 cups whipped)",
+          "grams": "238"
+        },
+        {
+          "amount": "1",
+          "description": "tbsp",
+          "grams": "15"
+        },
+        {
+          "amount": "1",
+          "description": "fl oz",
+          "grams": "29.8"
+        }
+      ]
+    },
+    "caraway": {
+      "fdc_id": 170918,
+      "description": "Spices, caraway seed",
+      "source_url": "https://fdc.nal.usda.gov/food-details/170918/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "fat": "14.59",
+        "carbohydrate": "49.9",
+        "calories": "333",
+        "calcium": "689",
+        "potassium": "1351",
+        "sodium": "17",
+        "saturated_fat": "0.62",
+        "protein": "19.77",
+        "iron": "16.23",
+        "cholesterol": "0",
+        "fiber": "38",
+        "sugar": "0.64"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "tsp",
+          "grams": "2.1"
+        },
+        {
+          "amount": "1",
+          "description": "tbsp",
+          "grams": "6.7"
+        }
+      ]
+    },
+    "whole_milk": {
+      "fdc_id": 171265,
+      "description": "Milk, whole, 3.25% milkfat, with added vitamin D",
+      "source_url": "https://fdc.nal.usda.gov/food-details/171265/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "cholesterol": "10",
+        "fat": "3.25",
+        "sugar": "5.05",
+        "carbohydrate": "4.8",
+        "calories": "61",
+        "saturated_fat": "1.865",
+        "fiber": "0",
+        "iron": "0.03",
+        "sodium": "43",
+        "protein": "3.15",
+        "calcium": "113",
+        "potassium": "132"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "cup",
+          "grams": "244"
+        },
+        {
+          "amount": "1",
+          "description": "fl oz",
+          "grams": "30.5"
+        },
+        {
+          "amount": "1",
+          "description": "tbsp",
+          "grams": "15"
+        },
+        {
+          "amount": "1",
+          "description": "quart",
+          "grams": "976"
+        }
+      ]
+    },
+    "cinnamon": {
+      "fdc_id": 171320,
+      "description": "Spices, cinnamon, ground",
+      "source_url": "https://fdc.nal.usda.gov/food-details/171320/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "cholesterol": "0",
+        "sugar": "2.17",
+        "iron": "8.32",
+        "fiber": "53.1",
+        "protein": "3.99",
+        "sodium": "10",
+        "trans_fat": "0",
+        "saturated_fat": "0.345",
+        "calcium": "1002",
+        "fat": "1.24",
+        "carbohydrate": "80.59",
+        "calories": "247",
+        "potassium": "431"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "tsp",
+          "grams": "2.6"
+        },
+        {
+          "amount": "1",
+          "description": "tbsp",
+          "grams": "7.8"
+        }
+      ]
+    },
+    "lard": {
+      "fdc_id": 171401,
+      "description": "Lard",
+      "source_url": "https://fdc.nal.usda.gov/food-details/171401/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "sugar": "0",
+        "calories": "902",
+        "protein": "0",
+        "fiber": "0",
+        "iron": "0",
+        "sodium": "0",
+        "cholesterol": "95",
+        "saturated_fat": "39.2",
+        "fat": "100",
+        "carbohydrate": "0",
+        "calcium": "0",
+        "potassium": "0"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "tbsp",
+          "grams": "12.8"
+        },
+        {
+          "amount": "1",
+          "description": "cup",
+          "grams": "205"
+        }
+      ]
+    },
+    "campbells_chicken_noodle_condensed": {
+      "fdc_id": 171556,
+      "description": "CAMPBELL'S, Chicken Noodle Soup, condensed",
+      "source_url": "https://fdc.nal.usda.gov/food-details/171556/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "fat": "1.53",
+        "carbohydrate": "5.97",
+        "calories": "47",
+        "sugar": "0",
+        "calcium": "6",
+        "potassium": "44",
+        "trans_fat": "0.007",
+        "saturated_fat": "0.388",
+        "protein": "2.37",
+        "iron": "0.69",
+        "sodium": "683",
+        "cholesterol": "8"
+      },
+      "portions": [
+        {
+          "amount": "0.5",
+          "description": "cup",
+          "grams": "123"
+        }
+      ]
+    },
+    "ground_beef_90_10_cooked": {
+      "fdc_id": 171794,
+      "description": "Beef, ground, 90% lean meat / 10% fat, crumbles, cooked, pan-browned",
+      "source_url": "https://fdc.nal.usda.gov/food-details/171794/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "calories": "230",
+        "carbohydrate": "0",
+        "sugar": "0",
+        "calcium": "16",
+        "potassium": "433",
+        "fiber": "0",
+        "iron": "3.08",
+        "sodium": "87",
+        "protein": "28.45",
+        "fat": "12.04",
+        "cholesterol": "89",
+        "trans_fat": "0.359",
+        "saturated_fat": "4.712"
+      },
+      "portions": [
+        {
+          "amount": "3",
+          "description": "oz",
+          "grams": "85"
+        },
+        {
+          "amount": "1",
+          "description": "portion ( yield from 1/2 lb raw meat )",
+          "grams": "154"
+        }
+      ]
+    },
+    "egg_hard_boiled": {
+      "fdc_id": 173424,
+      "description": "Egg, whole, cooked, hard-boiled",
+      "source_url": "https://fdc.nal.usda.gov/food-details/173424/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "sugar": "1.12",
+        "fiber": "0",
+        "calories": "155",
+        "cholesterol": "373",
+        "protein": "12.58",
+        "iron": "1.19",
+        "sodium": "124",
+        "saturated_fat": "3.267",
+        "calcium": "50",
+        "potassium": "126",
+        "fat": "10.61",
+        "carbohydrate": "1.12"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "cup, chopped",
+          "grams": "136"
+        },
+        {
+          "amount": "1",
+          "description": "tbsp",
+          "grams": "8.5"
+        },
+        {
+          "amount": "1",
+          "description": "large",
+          "grams": "50"
+        }
+      ]
+    },
+    "water": {
+      "fdc_id": 173647,
+      "description": "Beverages, water, tap, drinking",
+      "source_url": "https://fdc.nal.usda.gov/food-details/173647/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "fat": "0",
+        "carbohydrate": "0",
+        "calories": "0",
+        "calcium": "3",
+        "potassium": "0",
+        "protein": "0",
+        "fiber": "0",
+        "iron": "0",
+        "sodium": "4",
+        "sugar": "0",
+        "trans_fat": "0",
+        "saturated_fat": "0",
+        "cholesterol": "0"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "fl oz",
+          "grams": "29.6"
+        },
+        {
+          "amount": "1",
+          "description": "serving 8 fl oz",
+          "grams": "237"
+        },
+        {
+          "amount": "1",
+          "description": "liter",
+          "grams": "1000"
+        }
+      ]
+    },
+    "tuna_water": {
+      "fdc_id": 173709,
+      "description": "Fish, tuna, light, canned in water, drained solids (Includes foods for USDA's Food Distribution Program)",
+      "source_url": "https://fdc.nal.usda.gov/food-details/173709/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "sugar": "0",
+        "calcium": "17",
+        "potassium": "179",
+        "fat": "0.96",
+        "calories": "86",
+        "cholesterol": "36",
+        "trans_fat": "0.002",
+        "saturated_fat": "0.211",
+        "protein": "19.44",
+        "iron": "1.63",
+        "sodium": "247",
+        "fiber": "0",
+        "carbohydrate": "0"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "oz",
+          "grams": "28.35"
+        },
+        {
+          "amount": "3",
+          "description": "oz",
+          "grams": "85"
+        },
+        {
+          "amount": "1",
+          "description": "can",
+          "grams": "165"
+        },
+        {
+          "amount": "1",
+          "description": "cup, solid or chunks",
+          "grams": "154"
+        },
+        {
+          "amount": "1",
+          "description": "can (12.5 oz), drained",
+          "grams": "315"
+        }
+      ]
+    },
+    "navy_beans_dry": {
+      "fdc_id": 173745,
+      "description": "Beans, navy, mature seeds, raw",
+      "source_url": "https://fdc.nal.usda.gov/food-details/173745/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "iron": "5.49",
+        "sodium": "5",
+        "sugar": "3.88",
+        "calcium": "147",
+        "potassium": "1185",
+        "fat": "1.5",
+        "fiber": "15.3",
+        "carbohydrate": "60.75",
+        "calories": "337",
+        "protein": "22.33",
+        "trans_fat": "0",
+        "saturated_fat": "0.17"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "cup",
+          "grams": "208"
+        }
+      ]
+    },
+    "hot_dogs": {
+      "fdc_id": 173875,
+      "description": "Frankfurter, meat and poultry, unheated",
+      "source_url": "https://fdc.nal.usda.gov/food-details/173875/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "fiber": "0",
+        "cholesterol": "78",
+        "calories": "277",
+        "sugar": "2.75",
+        "calcium": "106",
+        "potassium": "359",
+        "fat": "24.18",
+        "carbohydrate": "5.02",
+        "trans_fat": "0.21",
+        "saturated_fat": "7.583",
+        "sodium": "976",
+        "iron": "1.04",
+        "protein": "9.72"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "frankfurter",
+          "grams": "51"
+        }
+      ]
+    },
+    "banana_raw": {
+      "fdc_id": 173944,
+      "description": "Bananas, raw",
+      "source_url": "https://fdc.nal.usda.gov/food-details/173944/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "saturated_fat": "0.112",
+        "carbohydrate": "22.84",
+        "calories": "89",
+        "trans_fat": "0",
+        "cholesterol": "0",
+        "fiber": "2.6",
+        "iron": "0.26",
+        "sodium": "1",
+        "protein": "1.09",
+        "sugar": "12.23",
+        "calcium": "5",
+        "potassium": "358",
+        "fat": "0.33"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "cup, mashed",
+          "grams": "225"
+        },
+        {
+          "amount": "1",
+          "description": "cup, sliced",
+          "grams": "150"
+        },
+        {
+          "amount": "1",
+          "description": "extra small (less than 6\" long)",
+          "grams": "81"
+        },
+        {
+          "amount": "1",
+          "description": "small (6\" to 6-7/8\" long)",
+          "grams": "101"
+        },
+        {
+          "amount": "1",
+          "description": "medium (7\" to 7-7/8\" long)",
+          "grams": "118"
+        },
+        {
+          "amount": "1",
+          "description": "large (8\" to 8-7/8\" long)",
+          "grams": "136"
+        },
+        {
+          "amount": "1",
+          "description": "extra large (9\" or longer)",
+          "grams": "152"
+        },
+        {
+          "amount": "1",
+          "description": "NLEA serving",
+          "grams": "126"
+        }
+      ]
+    },
+    "white_bread": {
+      "fdc_id": 174924,
+      "description": "Bread, white, commercially prepared (includes soft bread crumbs)",
+      "source_url": "https://fdc.nal.usda.gov/food-details/174924/nutrients",
+      "dataset": "USDA SR Legacy, April 2018",
+      "per_100g": {
+        "trans_fat": "0.027",
+        "saturated_fat": "0.698",
+        "fiber": "2.7",
+        "fat": "3.33",
+        "carbohydrate": "49.42",
+        "calories": "266",
+        "sugar": "5.67",
+        "calcium": "144",
+        "potassium": "126",
+        "protein": "8.85",
+        "iron": "3.61",
+        "sodium": "490",
+        "cholesterol": "0"
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "slice",
+          "grams": "29"
+        },
+        {
+          "amount": "1",
+          "description": "oz",
+          "grams": "28.35"
+        },
+        {
+          "amount": "1",
+          "description": "cup, crumbs",
+          "grams": "45"
+        },
+        {
+          "amount": "1",
+          "description": "cup, cubes",
+          "grams": "35"
+        },
+        {
+          "amount": "1",
+          "description": "slice, large",
+          "grams": "30"
+        },
+        {
+          "amount": "1",
+          "description": "slice",
+          "grams": "25"
+        },
+        {
+          "amount": "1",
+          "description": "slice crust not eaten",
+          "grams": "12"
+        },
+        {
+          "amount": "1",
+          "description": "slice, thin",
+          "grams": "20"
+        },
+        {
+          "amount": "1",
+          "description": "slice thin, crust not eaten",
+          "grams": "9"
+        },
+        {
+          "amount": "1",
+          "description": "slice, very thin",
+          "grams": "15"
+        }
+      ]
+    },
+    "potato_peeled_raw": {
+      "cnf_food_code": 2417,
+      "description": "Potato, flesh, raw",
+      "source_url": "https://food-nutrition.canada.ca/cnf-fce/serving-portion?id=2417&lang=eng",
+      "dataset": "Health Canada Canadian Nutrient File; retrieved 2026-10-20",
+      "nutrient_source_url": "https://food-nutrition.canada.ca/api/canadian-nutrient-file/nutrientamount/?id=2417&lang=en&type=json",
+      "per_100g": {
+        "cholesterol": "0.0",
+        "saturated_fat": "0.026",
+        "fat": "0.09",
+        "iron": "0.78",
+        "sugar": "0.78",
+        "fiber": "1.505",
+        "protein": "2.02",
+        "sodium": "6.0",
+        "calcium": "12.0",
+        "carbohydrate": "17.47",
+        "calories": "77.0",
+        "potassium": "421.0",
+        "trans_fat": null
+      },
+      "portions": [
+        {
+          "amount": "1",
+          "description": "potato (6.3cm dia), edible flesh",
+          "grams": "112"
+        }
+      ],
+      "notes": [
+        "Raw peeled potato composition avoids using cooked-potato weights as raw inputs.",
+        "Trans fat was not reported; it remains unknown, not zero.",
+        "For the recipe weight estimate, 4 large potatoes x369g x75% edible yield =1107g, using USDA170026 large-potato size and CNF2417 25% parings/trimmings refuse."
+      ]
     }
   }
 }

@@ -1,0 +1,59 @@
+{
+  "page": "hoover_stew.html",
+  "default_portion": "standard",
+  "portions": [
+    {
+      "id": "standard",
+      "count": 8,
+      "label": "1 bowl",
+      "batch_label": "8 bowls",
+      "fraction": "1/8 of recipe"
+    }
+  ],
+  "ingredients": [
+    {
+      "recipe_text": "1 box noodles (macaroni or egg noodles)",
+      "food": "pasta_dry",
+      "grams": 453.59237,
+      "weight_source": "https://www.barilla.com/en-us/products/pasta/classic-blue-box/elbows",
+      "basis": "16 oz (454 g) dry enriched elbow macaroni; selected package size."
+    },
+    {
+      "recipe_text": "1 can (15 oz) tomatoes, chopped or stewed",
+      "food": "tomatoes_canned",
+      "grams": 425.242846875,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/170051/nutrients",
+      "basis": "15 oz (425 g) regular canned tomatoes, including juice."
+    },
+    {
+      "recipe_text": "1 package hot dogs, sliced (or 1 can sausage/meat)",
+      "food": "hot_dogs",
+      "grams": 453.59237,
+      "weight_source": "https://www.oscarmayer.com/products/00044700000632-classic-wieners-hot-dogs",
+      "basis": "16 oz (454 g) meat-and-poultry hot dogs; USDA generic nutrient profile."
+    },
+    {
+      "recipe_text": "1 can (15 oz) corn, peas, or mixed beans",
+      "food": "corn_canned",
+      "grams": 425.242846875,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/170409/nutrients",
+      "basis": "15 oz (425 g) brine-packed canned corn, including liquid."
+    },
+    {
+      "recipe_text": "2-4 cups water or broth (just enough to cook the noodles)",
+      "excluded": true,
+      "reason": "calculated with water; broth is not included"
+    },
+    {
+      "recipe_text": "(Optional: 1 onion or garlic, if you had it)",
+      "food": "onion_raw",
+      "grams": 110,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/170000/nutrients",
+      "basis": "1 medium onion: 110 g."
+    }
+  ],
+  "notes": [
+    "Eight bowls; nutrition is for 1/8 of the batch. Finished weight and volume are unmeasured.",
+    "Uses a 16 oz (454 g) box of macaroni, a 16 oz (454 g) pack of meat-and-poultry hot dogs, regular canned tomatoes and corn with their liquid, one medium onion, and water."
+  ]
+}

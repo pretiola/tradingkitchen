@@ -1,0 +1,102 @@
+{
+  "page": "good_friday_scones.html",
+  "default_portion": "small",
+  "portions": [
+    {
+      "id": "small",
+      "count": 12,
+      "label": "1 small scone",
+      "batch_label": "12 small scones"
+    },
+    {
+      "id": "large",
+      "count": 8,
+      "label": "1 large scone",
+      "batch_label": "8 large scones"
+    }
+  ],
+  "ingredients": [
+    {
+      "recipe_text": "2 cups all purpose flour",
+      "food": "all_purpose_flour",
+      "grams": 240,
+      "weight_source": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart",
+      "basis": "2 cups × 120 g/cup"
+    },
+    {
+      "recipe_text": "1/2 teaspoon salt",
+      "food": "salt",
+      "grams": 3,
+      "weight_source": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart",
+      "basis": "1/2 tsp × 6 g/tsp"
+    },
+    {
+      "recipe_text": "2-3 tablespoons sugar (Granulated or brown)",
+      "food": "white_sugar",
+      "grams": 24.75,
+      "weight_source": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart",
+      "basis": "2 Tbsp × 198 g per 16 Tbsp"
+    },
+    {
+      "recipe_text": "1 tablespoon baking powder",
+      "food": "baking_powder",
+      "grams": 12,
+      "weight_source": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart",
+      "basis": "1 Tbsp = 3 tsp × 4 g/tsp"
+    },
+    {
+      "recipe_text": "1/2 teaspoon baking soda",
+      "food": "baking_soda",
+      "grams": 3,
+      "weight_source": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart",
+      "basis": "1/2 tsp = 3 g"
+    },
+    {
+      "recipe_text": "1/2 cup heavy cream",
+      "food": "heavy_cream",
+      "grams": 119,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/170859/nutrients",
+      "basis": "1/2 cup fluid heavy cream × USDA 238 g/cup"
+    },
+    {
+      "recipe_text": "2 full eggs",
+      "food": "egg_raw",
+      "grams": 100,
+      "weight_source": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart",
+      "basis": "2 large eggs × 50 g edible contents"
+    },
+    {
+      "recipe_text": "Splash of vanilla",
+      "food": "vanilla",
+      "grams": 4.2,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/173471/nutrients",
+      "basis": "1 tsp vanilla extract = USDA 4.2 g"
+    },
+    {
+      "recipe_text": "2-3 tablespoons of favorite preserve (usually marmalade but any will do)",
+      "food": "orange_marmalade",
+      "grams": 40,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/168819/nutrients",
+      "basis": "2 Tbsp orange marmalade × USDA 20 g/Tbsp"
+    },
+    {
+      "recipe_text": "Grated white chocolate (ideally frozen and use a knife to grate)",
+      "food": "white_chocolate",
+      "grams": 28,
+      "weight_source": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart",
+      "basis": "1 oz rounded to 28 g; no existing quantity specified"
+    },
+    {
+      "recipe_text": "1/2 cup frozen unsalted butter (grated with a large hole box cheese grater)",
+      "food": "unsalted_butter",
+      "grams": 113,
+      "weight_source": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart",
+      "basis": "1/2 cup = 113 g"
+    }
+  ],
+  "notes": [
+    "Default serving: 1 of 12 small scones. Choose large for a batch divided into 8.",
+    "Uses 2 tablespoons granulated sugar, 2 tablespoons orange marmalade, large eggs and unsalted butter. The unspecified amounts are modelled as 1 teaspoon vanilla and 28 g white chocolate.",
+    "Different preserves, extra sugar or chocolate, and baking-powder brands change these values. Finished scone weight has not been measured."
+  ]
+}

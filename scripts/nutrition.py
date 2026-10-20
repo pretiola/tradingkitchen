@@ -164,16 +164,21 @@ def render_section(config, foods, totals):
             source = '—'
         else:
             food = foods[item['food']]
-            description = f'{item["grams"]} g · {item.get("basis", food["description"])}'
+            weight = decimal(item['grams']).quantize(Decimal('0.1'), rounding=ROUND_HALF_UP)
+            weight_text = format(weight, 'f').rstrip('0').rstrip('.')
+            description = f'{weight_text} g · {item.get("basis", food["description"])}'
             source = f'<a href="{escape(item["weight_source"])}">Weight</a> · <a href="{escape(food["source_url"])}">Nutrients</a>'
         rows.append(f'<tr><th scope="row">{escape(item["recipe_text"])}</th><td>{escape(description)}</td><td>{source}</td></tr>')
     notes = ''.join(f'<p>{escape(note)}</p>' for note in config['notes'])
+    source_links = f'<a href="{FDC_URL}">USDA FoodData Central</a>'
+    if any(foods[item['food']].get('cnf_food_code') for item in config['ingredients'] if not item.get('excluded')):
+        source_links += ' and <a href="https://food-nutrition.canada.ca/cnf-fce/">Canadian Nutrient File</a>'
     return f'''<section id="nutrition" class="nutrition-section" aria-labelledby="nutrition-title">
       <h2 id="nutrition-title" class="visually-hidden">Estimated nutrition</h2>
       <div class="nutrition-controls" hidden><label for="nutrition-serving">Serving size</label><select id="nutrition-serving" data-nutrition-select hidden disabled>{options}</select></div>
       <div class="nutrition-panels">{panels}</div>
       <div class="nutrition-notes"><p><strong>About this estimate</strong></p>{notes}
-      <p>Calculated from ingredient weights and <a href="{FDC_URL}">USDA FoodData Central</a> records. Brands, substitutions and preparation can change the result. These are home-recipe estimates, not laboratory-tested package labels.</p>
+      <p>Estimated from ingredient weights and {source_links} records. Brands, substitutions and preparation change the result. Not a laboratory-tested package label.</p>
       <details><summary>Ingredients and calculation sources</summary><div class="nutrition-table-scroll"><table class="nutrition-ingredients"><caption>Amounts used for this batch estimate</caption><thead><tr><th scope="col">Recipe ingredient</th><th scope="col">Modelled amount</th><th scope="col">Sources</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div></details>
       <p class="nutrition-source-note"><a href="{DV_URL}">Daily Value reference</a>. Values are rounded for display; missing source values remain unknown.</p></div>
       <p class="visually-hidden" data-nutrition-status aria-live="polite"></p></section>'''
@@ -234,4 +239,8 @@ def validate_built_nutrition(page, root):
             wanted = display_amount(key, values[key]).replace('—', '-')
             if len(elements) != 1 or page.text_for(elements[0]) != wanted:
                 problems.append(f'{portion["id"]}: visible {key} differs from calculation')
+            if key != 'calories':
+                elements = [attrs for _, attrs in page.tags if attrs.get('data-nutrient-dv') == key and attrs.get('data-portion') == portion['id']]
+                if len(elements) != 1 or page.text_for(elements[0]) != percent(key, values).replace('—', '-'):
+                    problems.append(f'{portion["id"]}: visible {key} Daily Value differs from calculation')
     return [f'{page.name}: {message}' for message in problems]

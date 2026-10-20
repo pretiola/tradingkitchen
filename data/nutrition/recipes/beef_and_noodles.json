@@ -1,0 +1,63 @@
+{
+  "page": "beef_and_noodles.html",
+  "default_portion": "bowl",
+  "portions": [
+    {
+      "id": "bowl",
+      "count": 6,
+      "label": "1 dinner bowl",
+      "batch_label": "6 servings"
+    }
+  ],
+  "ingredients": [
+    {
+      "recipe_text": "1 lb ground beef",
+      "food": "ground_beef_90_10_cooked",
+      "grams": 308,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/171794/nutrients",
+      "basis": "Beef, ground, 90% lean meat / 10% fat, crumbles, cooked, pan-browned; USDA cooked, pan-browned 90/10 beef: 154 g yield per 1/2 lb raw × 2; food_portion 89379"
+    },
+    {
+      "recipe_text": "1 bag egg noodles",
+      "food": "egg_noodles_dry",
+      "grams": 340.1942775,
+      "weight_source": "https://www.muellerspasta.com/product/wide-egg-noodles/",
+      "basis": "Noodles, egg, dry, enriched; 12 oz × 28.349523125 g/oz"
+    },
+    {
+      "recipe_text": "1 can (15 oz) creamed corn",
+      "food": "creamed_corn_canned",
+      "grams": 425.242846875,
+      "weight_source": "https://www.nist.gov/sites/default/files/documents/calibrations/tn577.pdf",
+      "basis": "Corn, sweet, yellow, canned, cream style, regular pack; 15 oz × 28.349523125 g/oz"
+    },
+    {
+      "recipe_text": "1 can (10.5 oz) Campbell's chicken noodle soup (condensed)",
+      "food": "campbells_chicken_noodle_condensed",
+      "grams": 297.6699928125,
+      "weight_source": "https://www.nist.gov/sites/default/files/documents/calibrations/tn577.pdf",
+      "basis": "CAMPBELL'S, Chicken Noodle Soup, condensed; 10.5 oz × 28.349523125 g/oz"
+    },
+    {
+      "recipe_text": "Water or light chicken stock (as needed)",
+      "excluded": true,
+      "reason": "Water default. Broth excluded because quantity/type unspecified; would increase sodium and perhaps calories."
+    },
+    {
+      "recipe_text": "Salt and pepper to taste",
+      "excluded": true,
+      "reason": "Additional salt and pepper are not included."
+    },
+    {
+      "recipe_text": "(Serve with buttered white bread)",
+      "excluded": true,
+      "reason": "The buttered-bread accompaniment is not included."
+    }
+  ],
+  "notes": [
+    "Serving: 1/6 of the batch. Makes 6 modest dinner bowls; final volume varies with added water.",
+    "Uses a 12 oz (340 g) bag of dry egg noodles and 90% lean beef. One pound of raw beef is modelled as 308 g cooked and drained, using the USDA cooked-yield portion.",
+    "Uses the recipe’s 15 oz creamed corn and 10.5 oz condensed soup. Excludes stock, extra salt and pepper, and buttered-bread accompaniment.",
+    "Soup values use the USDA brand record. Some nutrients are unavailable in that record; these remain unknown rather than being treated as zero."
+  ]
+}

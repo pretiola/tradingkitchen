@@ -1,0 +1,80 @@
+{
+  "page": "hard_time_pudding.html",
+  "default_portion": "portion",
+  "portions": [
+    {
+      "id": "portion",
+      "count": 8,
+      "label": "1 portion, including sauce",
+      "batch_label": "8 portions"
+    }
+  ],
+  "ingredients": [
+    {
+      "recipe_text": "1 cup flour",
+      "food": "all_purpose_flour",
+      "grams": 120,
+      "weight_source": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart",
+      "basis": "1 cup = 120 g"
+    },
+    {
+      "recipe_text": "½ cup white sugar",
+      "food": "white_sugar",
+      "grams": 99,
+      "weight_source": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart",
+      "basis": "1/2 cup × 198 g/cup"
+    },
+    {
+      "recipe_text": "3 tsp. baking powder",
+      "food": "baking_powder",
+      "grams": 12,
+      "weight_source": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart",
+      "basis": "3 tsp × 4 g/tsp"
+    },
+    {
+      "recipe_text": "½ cup water (or milk)",
+      "food": "water",
+      "grams": 118.5,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/173647/nutrients",
+      "basis": "1/2 cup water × USDA 237 g per 8 fl oz"
+    },
+    {
+      "recipe_text": "½ cup raisins (Optional)",
+      "excluded": true,
+      "reason": "The optional raisins are not included in the base calculation."
+    },
+    {
+      "recipe_text": "1 ½ cup brown sugar",
+      "food": "brown_sugar",
+      "grams": 319.5,
+      "weight_source": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart",
+      "basis": "1.5 cups × 213 g/cup"
+    },
+    {
+      "recipe_text": "1 Tbsp. butter or margarine",
+      "food": "unsalted_butter",
+      "grams": 14.125,
+      "weight_source": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart",
+      "basis": "1 Tbsp = 1/8 of 113 g per 1/2 cup"
+    },
+    {
+      "recipe_text": "1 tsp. vanilla",
+      "food": "vanilla",
+      "grams": 4.2,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/173471/nutrients",
+      "basis": "1 tsp vanilla extract = USDA 4.2 g"
+    },
+    {
+      "recipe_text": "1 ½ - 2 cups boiling water",
+      "food": "water",
+      "grams": 355.5,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/173647/nutrients",
+      "basis": "1.5 cups water × USDA 237 g per 8 fl oz"
+    }
+  ],
+  "notes": [
+    "Divide the pan and its sauce into 8 equal portions.",
+    "Uses water rather than milk, unsalted butter and 1 1/2 cups boiling water. Optional raisins are excluded.",
+    "The sauce is included in the calculation. Finished pudding weight has not been measured."
+  ]
+}
