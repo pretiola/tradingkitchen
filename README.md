@@ -31,6 +31,8 @@ Put a replacement photo at its existing source path and rebuild. Sharp generates
 
 When adding a recipe, use an existing recipe as a starting point. Update its title, description, canonical URL, and Recipe structured data to match the visible content; add its homepage card, image, and `sitemap.xml` entry. Run the build, then review the recipe on desktop and mobile before publishing. The owner’s **chocolate chip cookies** recipe is in `chocolate_chip_cookies.html`, with the supplied photo edited with steam, a warm autumn kitchen setting, baking ingredients, and a Magic Baking Powder tin. The recipe began with the supplied document; the owner later reduced the chocolate chips to ⅓ cup. The owner later corrected the yield to 9 large or 16 medium cookies and the bake time to 9–14 minutes, depending on size; portioning appears before the optional 20-minute chill so the dough balls are ready to chill.
 
+Nutrition cards are generated from versioned ingredient weights and nutrient records, with matching Recipe JSON-LD. See [nutrition methodology](docs/NUTRITION.md) before changing ingredients or servings.
+
 ## Publish and operate
 
 The GitHub Pages workflow builds and deploys changes pushed to `main`. See [the deployment guide](docs/DEPLOYMENT.md) for DNS, HTTPS, analytics, Search Console, and release checks.

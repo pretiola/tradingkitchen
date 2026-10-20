@@ -1,0 +1,90 @@
+{
+  "page": "chocolate_chip_cookies.html",
+  "default_portion": "medium",
+  "portions": [
+    {
+      "id": "medium",
+      "count": 16,
+      "label": "1 medium cookie",
+      "batch_label": "16 medium cookies"
+    },
+    {
+      "id": "large",
+      "count": 9,
+      "label": "1 large cookie",
+      "batch_label": "9 large cookies"
+    }
+  ],
+  "ingredients": [
+    {
+      "recipe_text": "1⅓ cups all-purpose flour, spooned and leveled",
+      "food": "all_purpose_flour",
+      "grams": 160,
+      "weight_source": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart"
+    },
+    {
+      "recipe_text": "½ teaspoon baking powder",
+      "food": "baking_powder",
+      "grams": 2,
+      "weight_source": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart"
+    },
+    {
+      "recipe_text": "½ teaspoon baking soda",
+      "food": "baking_soda",
+      "grams": 3,
+      "weight_source": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart"
+    },
+    {
+      "recipe_text": "½ teaspoon fine sea salt",
+      "food": "salt",
+      "grams": 3,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/173468/nutrients"
+    },
+    {
+      "recipe_text": "½ cup (8 tablespoons) unsalted butter, melted and cooled",
+      "food": "unsalted_butter",
+      "grams": 113,
+      "weight_source": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart"
+    },
+    {
+      "recipe_text": "⅔ cup light brown sugar, packed",
+      "food": "brown_sugar",
+      "grams": 142,
+      "weight_source": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart"
+    },
+    {
+      "recipe_text": "⅓ cup white granulated sugar",
+      "food": "white_sugar",
+      "grams": 66,
+      "weight_source": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart"
+    },
+    {
+      "recipe_text": "1 large egg, at room temperature",
+      "food": "egg_raw",
+      "grams": 50,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/171287/nutrients"
+    },
+    {
+      "recipe_text": "1½ teaspoons pure vanilla extract",
+      "food": "vanilla",
+      "grams": 6.3,
+      "weight_source": "https://fdc.nal.usda.gov/food-details/173471/nutrients"
+    },
+    {
+      "recipe_text": "⅓ cup semisweet chocolate chips or chunks",
+      "food": "semisweet_chocolate",
+      "grams": 57,
+      "weight_source": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart"
+    },
+    {
+      "recipe_text": "¼ teaspoon flaky sea salt, for garnish (optional)",
+      "excluded": true,
+      "reason": "optional flaky-salt garnish"
+    }
+  ],
+  "notes": [
+    "Default serving: 1 medium cookie from a batch of 16. Choose large for a batch divided into 9.",
+    "Uses enriched all-purpose flour, unsalted butter, one 50 g egg and 57 g semisweet chocolate. Includes the salt in the dough; excludes optional flaky-salt garnish.",
+    "Cup and spoon quantities are converted to estimated ingredient weights. Finished cookie weight has not been measured."
+  ]
+}

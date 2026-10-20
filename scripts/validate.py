@@ -9,6 +9,7 @@ import subprocess
 import sys
 import xml.etree.ElementTree as ET
 from recipe_metadata import RecipeDocument, VOID_TAGS, validate_recipe_metadata
+from nutrition import validate_built_nutrition
 
 DOMAIN = "tradingkitchen.org"
 ORIGIN = f"https://{DOMAIN}"
@@ -325,6 +326,7 @@ def main():
     page_by_path = {page.path: page for page in pages}
     for page in pages:
         errors.extend(privacy_errors(page))
+        errors.extend(validate_built_nutrition(page, Path(__file__).resolve().parent.parent))
         if page.name == "index.html":
             check_newsletter(page)
         check_recipe_layout(page)

@@ -4,6 +4,7 @@ from pathlib import Path
 import re
 import shutil
 import subprocess
+from nutrition import apply_nutrition
 
 ROOT = Path(__file__).resolve().parent.parent
 OUTPUT = ROOT / "_site"
@@ -51,6 +52,7 @@ def main() -> None:
                     copy_public_file(asset)
     (OUTPUT / ".nojekyll").write_text("", encoding="utf-8")
     render_shared_partials()
+    apply_nutrition(ROOT, OUTPUT)
     subprocess.run(["node", "scripts/optimize-images.mjs"], cwd=ROOT, check=True)
     print(f"Staged {sum(path.is_file() for path in OUTPUT.rglob('*'))} public files in _site/")
 
