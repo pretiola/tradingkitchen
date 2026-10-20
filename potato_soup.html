@@ -60,34 +60,50 @@
         {
           "@type": "HowToStep",
           "text": "In a large soup pot, add the potatoes, onion, and carrots. If using, add the butter/lard and sauté for a few minutes.",
-          "url": "https://tradingkitchen.org/potato_soup.html#step-1"
+          "url": "https://tradingkitchen.org/potato_soup.html#step-1",
+          "name": "Sauté the vegetables"
         },
         {
           "@type": "HowToStep",
           "text": "Add the optional meat, the water, and the milk.",
-          "url": "https://tradingkitchen.org/potato_soup.html#step-2"
+          "url": "https://tradingkitchen.org/potato_soup.html#step-2",
+          "name": "Add meat and liquids"
         },
         {
           "@type": "HowToStep",
           "text": "Bring the mixture to a boil, then immediately reduce the heat to a low simmer.",
-          "url": "https://tradingkitchen.org/potato_soup.html#step-3"
+          "url": "https://tradingkitchen.org/potato_soup.html#step-3",
+          "name": "Bring to a simmer"
         },
         {
           "@type": "HowToStep",
           "text": "Cook for 20-30 minutes, stirring occasionally, until all vegetables are tender.",
-          "url": "https://tradingkitchen.org/potato_soup.html#step-4"
+          "url": "https://tradingkitchen.org/potato_soup.html#step-4",
+          "name": "Cook until tender"
         },
         {
           "@type": "HowToStep",
           "text": "Taste and season generously with salt and pepper.",
-          "url": "https://tradingkitchen.org/potato_soup.html#step-5"
+          "url": "https://tradingkitchen.org/potato_soup.html#step-5",
+          "name": "Season to taste"
         },
         {
           "@type": "HowToStep",
           "text": "Serve hot. (Some would partially mash the potatoes in the pot to thicken the soup).",
-          "url": "https://tradingkitchen.org/potato_soup.html#step-6"
+          "url": "https://tradingkitchen.org/potato_soup.html#step-6",
+          "name": "Serve hot"
         }
-      ]
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Trading Kitchen",
+        "url": "https://tradingkitchen.org/"
+      },
+      "recipeCategory": "Soup",
+      "recipeCuisine": "Home cooking",
+      "keywords": "potato soup, milk, vegetables, budget cooking",
+      "prepTime": "PT15M",
+      "cookTime": "PT40M"
     }
   ]
 }
@@ -120,11 +136,11 @@
         <article class="recipe-card">
             
             <h1 class="recipe-title">Potato Soup</h1>
+            <p class="recipe-byline">By <a href="/">Trading Kitchen</a></p>
             <a href="#recipe-section" class="inline-block font-bold underline mb-2 print:hidden">Jump to recipe &darr;</a>
 
             <img src="potato_soup.jpg" alt="Creamy potato soup with potatoes, carrots, and onion in milk broth" class="recipe-hero print:hidden" decoding="async">
 
-            
             <!-- Share Icons -->
             <div class="flex flex-wrap items-center gap-2 my-6 print:hidden border-b border-gray-200 pb-4">
                 <span class="text-gray-600 font-bold uppercase text-sm tracking-wider">Share:</span>
@@ -156,6 +172,20 @@
             <!-- Section 2: The Recipe -->
             <section id="recipe-section" class="my-8">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 border-b-2 border-gray-300 pb-2">The Recipe</h2>
+
+                <p class="recipe-meta print:hidden">Soup · Home cooking</p>
+
+                <dl class="recipe-facts grid grid-cols-2 gap-4 my-6 text-center">
+                    <div>
+                        <dt class="text-lg font-bold">Prep Time</dt>
+                        <dd class="text-lg" data-time-field="prepTime" data-duration="PT15M">About 15 minutes</dd>
+                    </div>
+                    <div>
+                        <dt class="text-lg font-bold">Cook Time</dt>
+                        <dd class="text-lg" data-time-field="cookTime" data-duration="PT40M">About 30–40 minutes</dd>
+                    </div>
+                </dl>
+                <p class="recipe-timing-note">Prep/cook times are estimates; cook until the vegetables are tender.</p>
                 
                 <img src="potato_soup.jpg" alt="Creamy potato soup with potatoes, carrots, and onion in milk broth" class="recipe-print-image hidden print:block" decoding="async">
 
@@ -214,7 +244,6 @@
 <script src="assets/analytics.js" defer></script>
 <script>
 </script>
-
 
 <script>
     document.getElementById('year').textContent = new Date().getFullYear();

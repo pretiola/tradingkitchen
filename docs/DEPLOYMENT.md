@@ -153,3 +153,15 @@ All 14 recipe pages use one screen/print layout in `assets/site.css`. Page-local
 The Pages workflow runs `npm ci` and `npm test` before uploading `_site/`. The build now generates 320/640/960/1280px WebP variants with pinned Sharp (no upscaling, orientation normalized), adds responsive image attributes, and hashes generated images and shared CSS/JS filenames. Existing image paths remain public for direct links and SEO. `_site/assets/manifest.json` records the outputs; `.cache/images` is a local rebuild cache and is never published.
 
 After removing the homepage background, 14 source photos produce 56 WebP variants. Their largest versions total about 2.12 MB versus 4.99 MB of source images (57% smaller); actual transfer depends on viewport and device pixel ratio. The source background and generated variants are no longer published. Validation checks every responsive candidate, intrinsic dimensions, local assets, and the shared recipe classes before deployment.
+
+## Recipe structured data: October 20, 2026
+
+Search Console reported one crawled recipe (Ash Cakes), zero critical issues, and 11 optional enhancement warnings. The source audit covered all 14 recipe pages.
+
+The recipes now include a visible Trading Kitchen byline and matching organizational author; recipe category, broad cuisine, and ingredient-specific keywords; preparation/cooking durations; and descriptive names for all 97 instruction steps. Step URLs retain their existing anchors and the ingredients/instructions remain unchanged. Banana bread's summary now agrees with its 45–60 minute baking instruction.
+
+New preparation/cooking estimates are explicitly labeled on the page. Ranges retain their visible minimum/maximum; JSON-LD uses the upper planning estimate in ISO 8601 duration format because that field does not support a duration range. This is an editorial convention, not a Google requirement. Timing notes preserve optional chilling, overnight resting/soaking, per-tray baking, and prepared-ingredient assumptions. Existing yields remain; no unverified serving counts were added.
+
+Build validation checks that author and timing metadata match visible content and that every instruction has a name, matching text, and a working page anchor. Optional ratings, nutrition figures, video, and step photos remain absent where supporting content does not exist. A finished-dish photograph must not be reused to pretend that mixing or cooking steps were photographed. These optional warnings do not make a recipe invalid.
+
+References: [Google recipe structured data](https://developers.google.com/search/docs/appearance/structured-data/recipe), [structured-data quality rules](https://developers.google.com/search/docs/appearance/structured-data/sd-policies).

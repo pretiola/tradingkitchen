@@ -61,51 +61,69 @@
         {
           "@type": "HowToStep",
           "text": "Preheat the oven to 350°F",
-          "url": "https://tradingkitchen.org/banana_bread.html#step-1"
+          "url": "https://tradingkitchen.org/banana_bread.html#step-1",
+          "name": "Preheat the oven"
         },
         {
           "@type": "HowToStep",
           "text": "Prepare the desired loaf pan with light greasing",
-          "url": "https://tradingkitchen.org/banana_bread.html#step-2"
+          "url": "https://tradingkitchen.org/banana_bread.html#step-2",
+          "name": "Grease the loaf pan"
         },
         {
           "@type": "HowToStep",
           "text": "In a large bowl, whisk together the flour, baking soda, salt, and cinnamon.",
-          "url": "https://tradingkitchen.org/banana_bread.html#step-3"
+          "url": "https://tradingkitchen.org/banana_bread.html#step-3",
+          "name": "Whisk dry ingredients"
         },
         {
           "@type": "HowToStep",
           "text": "In a separate large bowl, beat the brown sugar and butter by hand or with a mixer until smooth.",
-          "url": "https://tradingkitchen.org/banana_bread.html#step-4"
+          "url": "https://tradingkitchen.org/banana_bread.html#step-4",
+          "name": "Cream butter and sugar"
         },
         {
           "@type": "HowToStep",
           "text": "Stir in the beaten eggs and the mashed bananas until well blended.",
-          "url": "https://tradingkitchen.org/banana_bread.html#step-5"
+          "url": "https://tradingkitchen.org/banana_bread.html#step-5",
+          "name": "Add eggs and bananas"
         },
         {
           "@type": "HowToStep",
           "text": "Pour the wet banana mixture into the dry flour mixture. Stir only until just combined. Do not overmix.",
-          "url": "https://tradingkitchen.org/banana_bread.html#step-6"
+          "url": "https://tradingkitchen.org/banana_bread.html#step-6",
+          "name": "Combine the batter"
         },
         {
           "@type": "HowToStep",
           "text": "Pour the batter into the prepared loaf pan.",
-          "url": "https://tradingkitchen.org/banana_bread.html#step-7"
+          "url": "https://tradingkitchen.org/banana_bread.html#step-7",
+          "name": "Fill the loaf pan"
         },
         {
           "@type": "HowToStep",
           "text": "Bake in the preheated oven for 45-60 minutes, or until a toothpick inserted into the center comes out clean.",
-          "url": "https://tradingkitchen.org/banana_bread.html#step-8"
+          "url": "https://tradingkitchen.org/banana_bread.html#step-8",
+          "name": "Bake the loaf"
         },
         {
           "@type": "HowToStep",
           "text": "If the edges seem overly browned turn it out onto a wire rack to cool immediately, otherwise you can feel free to let it sit for a few minutes before removing from the loaf pan.",
-          "url": "https://tradingkitchen.org/banana_bread.html#step-9"
+          "url": "https://tradingkitchen.org/banana_bread.html#step-9",
+          "name": "Cool the bread"
         }
       ],
       "prepTime": "PT15M",
-      "recipeYield": "8 servings"
+      "recipeYield": "8 servings",
+      "author": {
+        "@type": "Organization",
+        "name": "Trading Kitchen",
+        "url": "https://tradingkitchen.org/"
+      },
+      "recipeCategory": "Bread",
+      "recipeCuisine": "American",
+      "keywords": "banana bread, overripe bananas, quick bread, home baking",
+      "cookTime": "PT60M"
     }
   ]
 }
@@ -139,11 +157,11 @@
         <article class="recipe-card">
             
             <h1 class="recipe-title">Banana Bread</h1>
+            <p class="recipe-byline">By <a href="/">Trading Kitchen</a></p>
             <a href="#recipe-section" class="inline-block font-bold underline mb-2 print:hidden">Jump to recipe &darr;</a>
 
             <img src="banana_bread.jpeg?v=7093973e40" alt="Banana bread loaf and a thick slice beside baking ingredients" class="recipe-hero print:hidden" decoding="async">
 
-            
             <!-- Share Icons -->
             <div class="flex flex-wrap items-center gap-2 my-6 print:hidden border-b border-gray-200 pb-4">
                 <span class="text-gray-600 font-bold uppercase text-sm tracking-wider">Share:</span>
@@ -177,21 +195,23 @@
             <section id="recipe-section" class="my-8">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 border-b-2 border-gray-300 pb-2">The Recipe</h2>
 
-                <div class="recipe-facts flex justify-around my-6 text-center">
+                <p class="recipe-meta print:hidden">Bread · American</p>
+
+                <dl class="recipe-facts grid grid-cols-2 gap-4 my-6 text-center">
                     <div>
-                        <h4 class="text-lg font-bold">Prep Time</h4>
-                        <p class="text-lg">15 mins</p>
+                        <dt class="text-lg font-bold">Prep Time</dt>
+                        <dd class="text-lg" data-time-field="prepTime" data-duration="PT15M">15 minutes</dd>
                     </div>
                     <div>
-                        <h4 class="text-lg font-bold">Cook Time</h4>
-                        <p class="text-lg">45 mins</p>
+                        <dt class="text-lg font-bold">Cook Time</dt>
+                        <dd class="text-lg" data-time-field="cookTime" data-duration="PT60M">45–60 minutes</dd>
                     </div>
                     <div>
-                        <h4 class="text-lg font-bold">Serves</h4>
-                        <p class="text-lg">8</p>
+                        <dt class="text-lg font-bold">Serves</dt>
+                        <dd class="text-lg">8</dd>
                     </div>
-                </div>
-                
+                </dl>
+
                 <img src="banana_bread.jpeg?v=7093973e40" alt="Banana bread loaf and a thick slice beside baking ingredients" class="recipe-print-image hidden print:block" decoding="async">
 
                 <p class="text-lg">The following recipe has been inspired by a lot of trial and error resulting in a robust predictable result.</p>
@@ -234,7 +254,6 @@
                 </div>
             </section>
 
-
             <footer class="recipe-print-footer">Trading Kitchen · https://tradingkitchen.org</footer>
         </article>
         
@@ -256,7 +275,6 @@
 <script src="assets/analytics.js" defer></script>
 <script>
 </script>
-
 
 <script>
     document.getElementById('year').textContent = new Date().getFullYear();

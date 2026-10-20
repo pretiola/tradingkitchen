@@ -59,34 +59,50 @@
         {
           "@type": "HowToStep",
           "text": "In a large pot or Dutch oven, brown the ground beef. Drain any excess fat.",
-          "url": "https://tradingkitchen.org/beef_and_noodles.html#step-1"
+          "url": "https://tradingkitchen.org/beef_and_noodles.html#step-1",
+          "name": "Brown the beef"
         },
         {
           "@type": "HowToStep",
           "text": "Add the egg noodles, creamed corn, and condensed chicken noodle soup.",
-          "url": "https://tradingkitchen.org/beef_and_noodles.html#step-2"
+          "url": "https://tradingkitchen.org/beef_and_noodles.html#step-2",
+          "name": "Add noodles, corn, and soup"
         },
         {
           "@type": "HowToStep",
           "text": "Add just enough water or stock to cover the noodles (the corn and soup add liquid, so don't add too much at first).",
-          "url": "https://tradingkitchen.org/beef_and_noodles.html#step-3"
+          "url": "https://tradingkitchen.org/beef_and_noodles.html#step-3",
+          "name": "Add water or stock"
         },
         {
           "@type": "HowToStep",
           "text": "Stir well to combine. Bring to a boil.",
-          "url": "https://tradingkitchen.org/beef_and_noodles.html#step-4"
+          "url": "https://tradingkitchen.org/beef_and_noodles.html#step-4",
+          "name": "Bring to a boil"
         },
         {
           "@type": "HowToStep",
           "text": "Reduce heat to a simmer, cover, and cook for 15-20 minutes, or until the noodles are tender. Stir occasionally.",
-          "url": "https://tradingkitchen.org/beef_and_noodles.html#step-5"
+          "url": "https://tradingkitchen.org/beef_and_noodles.html#step-5",
+          "name": "Simmer until tender"
         },
         {
           "@type": "HowToStep",
           "text": "Season with salt and pepper. Let it rest for 10 minutes to thicken before serving.",
-          "url": "https://tradingkitchen.org/beef_and_noodles.html#step-6"
+          "url": "https://tradingkitchen.org/beef_and_noodles.html#step-6",
+          "name": "Season, rest, and serve"
         }
-      ]
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Trading Kitchen",
+        "url": "https://tradingkitchen.org/"
+      },
+      "recipeCategory": "Main course",
+      "recipeCuisine": "American",
+      "keywords": "beef and noodles, ground beef, egg noodles, one pot",
+      "prepTime": "PT10M",
+      "cookTime": "PT30M"
     }
   ]
 }
@@ -119,11 +135,11 @@
         <article class="recipe-card">
             
             <h1 class="recipe-title">Beef and Noodles</h1>
+            <p class="recipe-byline">By <a href="/">Trading Kitchen</a></p>
             <a href="#recipe-section" class="inline-block font-bold underline mb-2 print:hidden">Jump to recipe &darr;</a>
 
             <img src="noodles.jpg?v=bfae78fe4d" alt="Egg noodles with browned ground beef and creamed corn" class="recipe-hero print:hidden" decoding="async">
 
-            
             <!-- Share Icons -->
             <div class="flex flex-wrap items-center gap-2 my-6 print:hidden border-b border-gray-200 pb-4">
                 <span class="text-gray-600 font-bold uppercase text-sm tracking-wider">Share:</span>
@@ -155,6 +171,20 @@
             <!-- Section 2: The Recipe -->
             <section id="recipe-section" class="my-8">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 border-b-2 border-gray-300 pb-2">The Recipe</h2>
+
+                <p class="recipe-meta print:hidden">Main course · American</p>
+
+                <dl class="recipe-facts grid grid-cols-2 gap-4 my-6 text-center">
+                    <div>
+                        <dt class="text-lg font-bold">Prep Time</dt>
+                        <dd class="text-lg" data-time-field="prepTime" data-duration="PT10M">About 10 minutes</dd>
+                    </div>
+                    <div>
+                        <dt class="text-lg font-bold">Cook Time</dt>
+                        <dd class="text-lg" data-time-field="cookTime" data-duration="PT30M">About 25–30 minutes</dd>
+                    </div>
+                </dl>
+                <p class="recipe-timing-note">Prep/cook times are estimates; add the 10-minute rest before serving.</p>
 
                 <img src="noodles.jpg?v=bfae78fe4d" alt="Egg noodles with browned ground beef and creamed corn" class="recipe-print-image hidden print:block" decoding="async">
                 
@@ -212,7 +242,6 @@
 <script src="assets/analytics.js" defer></script>
 <script>
 </script>
-
 
 <script>
     document.getElementById('year').textContent = new Date().getFullYear();

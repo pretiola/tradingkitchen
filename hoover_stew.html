@@ -58,34 +58,50 @@
         {
           "@type": "HowToStep",
           "text": "If using, sauté the onion or garlic in a large pot.",
-          "url": "https://tradingkitchen.org/hoover_stew.html#step-1"
+          "url": "https://tradingkitchen.org/hoover_stew.html#step-1",
+          "name": "Sauté aromatics (optional)"
         },
         {
           "@type": "HowToStep",
           "text": "Add all ingredients to the pot: noodles, tomatoes, sliced hot dogs, and canned vegetables (do not drain).",
-          "url": "https://tradingkitchen.org/hoover_stew.html#step-2"
+          "url": "https://tradingkitchen.org/hoover_stew.html#step-2",
+          "name": "Combine the ingredients"
         },
         {
           "@type": "HowToStep",
           "text": "Add just enough water or broth to cover the noodles.",
-          "url": "https://tradingkitchen.org/hoover_stew.html#step-3"
+          "url": "https://tradingkitchen.org/hoover_stew.html#step-3",
+          "name": "Add water or broth"
         },
         {
           "@type": "HowToStep",
           "text": "Bring to a boil, then reduce heat and simmer.",
-          "url": "https://tradingkitchen.org/hoover_stew.html#step-4"
+          "url": "https://tradingkitchen.org/hoover_stew.html#step-4",
+          "name": "Bring to a simmer"
         },
         {
           "@type": "HowToStep",
           "text": "Cook for 15-20 minutes, stirring often so the noodles don't stick, until the noodles are tender and the stew has thickened.",
-          "url": "https://tradingkitchen.org/hoover_stew.html#step-5"
+          "url": "https://tradingkitchen.org/hoover_stew.html#step-5",
+          "name": "Cook until tender"
         },
         {
           "@type": "HowToStep",
           "text": "Serve hot.",
-          "url": "https://tradingkitchen.org/hoover_stew.html#step-6"
+          "url": "https://tradingkitchen.org/hoover_stew.html#step-6",
+          "name": "Serve hot"
         }
-      ]
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Trading Kitchen",
+        "url": "https://tradingkitchen.org/"
+      },
+      "recipeCategory": "Stew",
+      "recipeCuisine": "American",
+      "keywords": "Hoover stew, macaroni, hot dogs, pantry cooking",
+      "prepTime": "PT10M",
+      "cookTime": "PT30M"
     }
   ]
 }
@@ -118,11 +134,11 @@
         <article class="recipe-card">
             
             <h1 class="recipe-title">Hoover Stew</h1>
+            <p class="recipe-byline">By <a href="/">Trading Kitchen</a></p>
             <a href="#recipe-section" class="inline-block font-bold underline mb-2 print:hidden">Jump to recipe &darr;</a>
 
             <img src="hoover.jpg?v=58e8bf2373" alt="Hoover stew with macaroni, hot dogs, tomatoes, and corn in an enameled pot and serving bowl on a wooden cottage kitchen table" class="recipe-hero print:hidden" decoding="async">
 
-            
             <!-- Share Icons -->
             <div class="flex flex-wrap items-center gap-2 my-6 print:hidden border-b border-gray-200 pb-4">
                 <span class="text-gray-600 font-bold uppercase text-sm tracking-wider">Share:</span>
@@ -154,6 +170,20 @@
             <!-- Section 2: The Recipe -->
             <section id="recipe-section" class="my-8">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 border-b-2 border-gray-300 pb-2">The Recipe</h2>
+
+                <p class="recipe-meta print:hidden">Stew · American</p>
+
+                <dl class="recipe-facts grid grid-cols-2 gap-4 my-6 text-center">
+                    <div>
+                        <dt class="text-lg font-bold">Prep Time</dt>
+                        <dd class="text-lg" data-time-field="prepTime" data-duration="PT10M">About 10 minutes</dd>
+                    </div>
+                    <div>
+                        <dt class="text-lg font-bold">Cook Time</dt>
+                        <dd class="text-lg" data-time-field="cookTime" data-duration="PT30M">About 20–30 minutes</dd>
+                    </div>
+                </dl>
+                <p class="recipe-timing-note">Prep/cook times are estimates; cook until the noodles are tender.</p>
 
                 <img src="hoover.jpg?v=58e8bf2373" alt="Hoover stew with macaroni, hot dogs, tomatoes, and corn in an enameled pot and serving bowl on a wooden cottage kitchen table" class="recipe-print-image hidden print:block" decoding="async">
                 
@@ -210,7 +240,6 @@
 <script src="assets/analytics.js" defer></script>
 <script>
 </script>
-
 
 <script>
     document.getElementById('year').textContent = new Date().getFullYear();

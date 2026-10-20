@@ -58,34 +58,50 @@
         {
           "@type": "HowToStep",
           "text": "Combine the cooked rice, milk, butter, and sweetener in a small saucepan.",
-          "url": "https://tradingkitchen.org/rice_pudding.html#step-1"
+          "url": "https://tradingkitchen.org/rice_pudding.html#step-1",
+          "name": "Combine the ingredients"
         },
         {
           "@type": "HowToStep",
           "text": "Cook over low heat, stirring frequently to prevent the milk from scalding and the rice from sticking.",
-          "url": "https://tradingkitchen.org/rice_pudding.html#step-2"
+          "url": "https://tradingkitchen.org/rice_pudding.html#step-2",
+          "name": "Heat gently"
         },
         {
           "@type": "HowToStep",
           "text": "Simmer for about 20 minutes. The mixture will thicken as the rice absorbs the milk.",
-          "url": "https://tradingkitchen.org/rice_pudding.html#step-3"
+          "url": "https://tradingkitchen.org/rice_pudding.html#step-3",
+          "name": "Simmer until thickened"
         },
         {
           "@type": "HowToStep",
           "text": "(If using raisins, add them in the last 5 minutes).",
-          "url": "https://tradingkitchen.org/rice_pudding.html#step-4"
+          "url": "https://tradingkitchen.org/rice_pudding.html#step-4",
+          "name": "Add raisins (optional)"
         },
         {
           "@type": "HowToStep",
           "text": "Stir in the pinch of cinnamon.",
-          "url": "https://tradingkitchen.org/rice_pudding.html#step-5"
+          "url": "https://tradingkitchen.org/rice_pudding.html#step-5",
+          "name": "Add cinnamon"
         },
         {
           "@type": "HowToStep",
           "text": "Serve warm. The pudding will continue to thicken as it cools.",
-          "url": "https://tradingkitchen.org/rice_pudding.html#step-6"
+          "url": "https://tradingkitchen.org/rice_pudding.html#step-6",
+          "name": "Serve warm"
         }
-      ]
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Trading Kitchen",
+        "url": "https://tradingkitchen.org/"
+      },
+      "recipeCategory": "Dessert",
+      "recipeCuisine": "Home cooking",
+      "keywords": "rice pudding, cooked rice, leftovers, milk",
+      "prepTime": "PT5M",
+      "cookTime": "PT25M"
     }
   ]
 }
@@ -118,11 +134,11 @@
         <article class="recipe-card">
             
             <h1 class="recipe-title">Rice Pudding</h1>
+            <p class="recipe-byline">By <a href="/">Trading Kitchen</a></p>
             <a href="#recipe-section" class="inline-block font-bold underline mb-2 print:hidden">Jump to recipe &darr;</a>
 
             <img src="rice_pudding.jpg" alt="Creamy rice pudding with cinnamon and raisins" class="recipe-hero print:hidden" decoding="async">
 
-            
             <!-- Share Icons -->
             <div class="flex flex-wrap items-center gap-2 my-6 print:hidden border-b border-gray-200 pb-4">
                 <span class="text-gray-600 font-bold uppercase text-sm tracking-wider">Share:</span>
@@ -154,6 +170,20 @@
             <!-- Section 2: The Recipe -->
             <section id="recipe-section" class="my-8">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 border-b-2 border-gray-300 pb-2">The Recipe</h2>
+
+                <p class="recipe-meta print:hidden">Dessert · Home cooking</p>
+
+                <dl class="recipe-facts grid grid-cols-2 gap-4 my-6 text-center">
+                    <div>
+                        <dt class="text-lg font-bold">Prep Time</dt>
+                        <dd class="text-lg" data-time-field="prepTime" data-duration="PT5M">About 5 minutes</dd>
+                    </div>
+                    <div>
+                        <dt class="text-lg font-bold">Cook Time</dt>
+                        <dd class="text-lg" data-time-field="cookTime" data-duration="PT25M">About 20–25 minutes</dd>
+                    </div>
+                </dl>
+                <p class="recipe-timing-note">Prep/cook times are estimates; start with cooked rice.</p>
                 
                 <img src="rice_pudding.jpg" alt="Creamy rice pudding with cinnamon and raisins" class="recipe-print-image hidden print:block" decoding="async">
 
@@ -210,7 +240,6 @@
 <script src="assets/analytics.js" defer></script>
 <script>
 </script>
-
 
 <script>
     document.getElementById('year').textContent = new Date().getFullYear();

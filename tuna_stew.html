@@ -61,39 +61,56 @@
         {
           "@type": "HowToStep",
           "text": "In a soup pot, sauté the celery in butter or lard (or a little water) until about halfway cooked.",
-          "url": "https://tradingkitchen.org/tuna_stew.html#step-1"
+          "url": "https://tradingkitchen.org/tuna_stew.html#step-1",
+          "name": "Sauté the celery"
         },
         {
           "@type": "HowToStep",
           "text": "Add the chopped potatoes and just enough water to cover them. Bring to a boil, then simmer until the potatoes are tender. Do not drain.",
-          "url": "https://tradingkitchen.org/tuna_stew.html#step-2"
+          "url": "https://tradingkitchen.org/tuna_stew.html#step-2",
+          "name": "Simmer the potatoes"
         },
         {
           "@type": "HowToStep",
           "text": "Reduce the heat and pour in the milk. Stir to heat through, but do not let it come to a rolling boil.",
-          "url": "https://tradingkitchen.org/tuna_stew.html#step-3"
+          "url": "https://tradingkitchen.org/tuna_stew.html#step-3",
+          "name": "Add the milk"
         },
         {
           "@type": "HowToStep",
           "text": "Stir in the canned tuna (drained) and the chopped hard-boiled eggs.",
-          "url": "https://tradingkitchen.org/tuna_stew.html#step-4"
+          "url": "https://tradingkitchen.org/tuna_stew.html#step-4",
+          "name": "Add tuna and eggs"
         },
         {
           "@type": "HowToStep",
           "text": "Let the stew heat through for another few minutes.",
-          "url": "https://tradingkitchen.org/tuna_stew.html#step-5"
+          "url": "https://tradingkitchen.org/tuna_stew.html#step-5",
+          "name": "Heat through"
         },
         {
           "@type": "HowToStep",
           "text": "Season generously with salt and pepper.",
-          "url": "https://tradingkitchen.org/tuna_stew.html#step-6"
+          "url": "https://tradingkitchen.org/tuna_stew.html#step-6",
+          "name": "Season to taste"
         },
         {
           "@type": "HowToStep",
           "text": "Serve hot over slices of stale bread or toast.",
-          "url": "https://tradingkitchen.org/tuna_stew.html#step-7"
+          "url": "https://tradingkitchen.org/tuna_stew.html#step-7",
+          "name": "Serve over toast"
         }
-      ]
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Trading Kitchen",
+        "url": "https://tradingkitchen.org/"
+      },
+      "recipeCategory": "Stew",
+      "recipeCuisine": "Home cooking",
+      "keywords": "tuna stew, canned tuna, potatoes, hard-boiled eggs",
+      "prepTime": "PT15M",
+      "cookTime": "PT35M"
     }
   ]
 }
@@ -126,11 +143,11 @@
         <article class="recipe-card">
             
             <h1 class="recipe-title">Tuna Fish Stew</h1>
+            <p class="recipe-byline">By <a href="/">Trading Kitchen</a></p>
             <a href="#recipe-section" class="inline-block font-bold underline mb-2 print:hidden">Jump to recipe &darr;</a>
 
             <img src="tuna_stew.jpg" alt="Creamy tuna stew with potatoes, celery, and hard-boiled egg, served with toast" class="recipe-hero print:hidden" decoding="async">
 
-            
             <!-- Share Icons -->
             <div class="flex flex-wrap items-center gap-2 my-6 print:hidden border-b border-gray-200 pb-4">
                 <span class="text-gray-600 font-bold uppercase text-sm tracking-wider">Share:</span>
@@ -162,6 +179,20 @@
             <!-- Section 2: The Recipe -->
             <section id="recipe-section" class="my-8">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 border-b-2 border-gray-300 pb-2">The Recipe</h2>
+
+                <p class="recipe-meta print:hidden">Stew · Home cooking</p>
+
+                <dl class="recipe-facts grid grid-cols-2 gap-4 my-6 text-center">
+                    <div>
+                        <dt class="text-lg font-bold">Prep Time</dt>
+                        <dd class="text-lg" data-time-field="prepTime" data-duration="PT15M">About 15 minutes</dd>
+                    </div>
+                    <div>
+                        <dt class="text-lg font-bold">Cook Time</dt>
+                        <dd class="text-lg" data-time-field="cookTime" data-duration="PT35M">About 25–35 minutes</dd>
+                    </div>
+                </dl>
+                <p class="recipe-timing-note">Prep/cook times are estimates; start with hard-boiled eggs.</p>
                 
                 <img src="tuna_stew.jpg" alt="Creamy tuna stew with potatoes, celery, and hard-boiled egg, served with toast" class="recipe-print-image hidden print:block" decoding="async">
 
@@ -222,7 +253,6 @@
 <script src="assets/analytics.js" defer></script>
 <script>
 </script>
-
 
 <script>
     document.getElementById('year').textContent = new Date().getFullYear();

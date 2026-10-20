@@ -60,34 +60,50 @@
         {
           "@type": "HowToStep",
           "text": "Make the roux (Zaprezna): In a soup pot, melt the fat over medium heat. Whisk in the flour and cook, stirring constantly, until it turns a light golden brown (1-2 minutes).",
-          "url": "https://tradingkitchen.org/zaprezna_soup.html#step-1"
+          "url": "https://tradingkitchen.org/zaprezna_soup.html#step-1",
+          "name": "Make the roux"
         },
         {
           "@type": "HowToStep",
           "text": "Add the caraway seeds, salt, and pepper, and stir for another 30 seconds.",
-          "url": "https://tradingkitchen.org/zaprezna_soup.html#step-2"
+          "url": "https://tradingkitchen.org/zaprezna_soup.html#step-2",
+          "name": "Add the seasonings"
         },
         {
           "@type": "HowToStep",
           "text": "Slowly whisk in the water or broth. Be careful, as it will steam. Bring to a boil, then reduce to a simmer.",
-          "url": "https://tradingkitchen.org/zaprezna_soup.html#step-3"
+          "url": "https://tradingkitchen.org/zaprezna_soup.html#step-3",
+          "name": "Add broth and simmer"
         },
         {
           "@type": "HowToStep",
           "text": "Make the dumplings: In a small bowl, beat the eggs. Add the salt and slowly mix in the flour until you have a thick, sticky batter (thicker than pancake batter).",
-          "url": "https://tradingkitchen.org/zaprezna_soup.html#step-4"
+          "url": "https://tradingkitchen.org/zaprezna_soup.html#step-4",
+          "name": "Mix the dumpling batter"
         },
         {
           "@type": "HowToStep",
           "text": "Drop small spoonfuls of the dumpling batter directly into the simmering soup. They will cook quickly.",
-          "url": "https://tradingkitchen.org/zaprezna_soup.html#step-5"
+          "url": "https://tradingkitchen.org/zaprezna_soup.html#step-5",
+          "name": "Add the dumplings"
         },
         {
           "@type": "HowToStep",
           "text": "Simmer for another 10-15 minutes until the dumplings are cooked through. Taste and adjust seasoning.",
-          "url": "https://tradingkitchen.org/zaprezna_soup.html#step-6"
+          "url": "https://tradingkitchen.org/zaprezna_soup.html#step-6",
+          "name": "Simmer and season"
         }
-      ]
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Trading Kitchen",
+        "url": "https://tradingkitchen.org/"
+      },
+      "recipeCategory": "Soup",
+      "recipeCuisine": "Eastern European",
+      "keywords": "Zaprezna soup, roux, dumplings, caraway",
+      "prepTime": "PT10M",
+      "cookTime": "PT25M"
     }
   ]
 }
@@ -120,11 +136,11 @@
         <article class="recipe-card">
             
             <h1 class="recipe-title">Zaprezna Soup</h1>
+            <p class="recipe-byline">By <a href="/">Trading Kitchen</a></p>
             <a href="#recipe-section" class="inline-block font-bold underline mb-2 print:hidden">Jump to recipe &darr;</a>
 
             <img src="zaprezna_soup.jpg" alt="Zaprezna soup with golden caraway broth and egg-and-flour dumplings" class="recipe-hero print:hidden" decoding="async">
 
-            
             <!-- Share Icons -->
             <div class="flex flex-wrap items-center gap-2 my-6 print:hidden border-b border-gray-200 pb-4">
                 <span class="text-gray-600 font-bold uppercase text-sm tracking-wider">Share:</span>
@@ -156,6 +172,20 @@
             <!-- Section 2: The Recipe -->
             <section id="recipe-section" class="my-8">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 border-b-2 border-gray-300 pb-2">The Recipe</h2>
+
+                <p class="recipe-meta print:hidden">Soup · Eastern European</p>
+
+                <dl class="recipe-facts grid grid-cols-2 gap-4 my-6 text-center">
+                    <div>
+                        <dt class="text-lg font-bold">Prep Time</dt>
+                        <dd class="text-lg" data-time-field="prepTime" data-duration="PT10M">About 10 minutes</dd>
+                    </div>
+                    <div>
+                        <dt class="text-lg font-bold">Cook Time</dt>
+                        <dd class="text-lg" data-time-field="cookTime" data-duration="PT25M">About 20–25 minutes</dd>
+                    </div>
+                </dl>
+                <p class="recipe-timing-note">Prep/cook times are estimates; cook until the dumplings are done.</p>
                 
                 <img src="zaprezna_soup.jpg" alt="Zaprezna soup with golden caraway broth and egg-and-flour dumplings" class="recipe-print-image hidden print:block" decoding="async">
 
@@ -216,7 +246,6 @@
 <script src="assets/analytics.js" defer></script>
 <script>
 </script>
-
 
 <script>
     document.getElementById('year').textContent = new Date().getFullYear();

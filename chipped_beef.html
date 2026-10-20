@@ -58,39 +58,56 @@
         {
           "@type": "HowToStep",
           "text": "(Optional step): If the dried beef is very salty, you can briefly soak it in hot water for a few minutes, then drain.",
-          "url": "https://tradingkitchen.org/chipped_beef.html#step-1"
+          "url": "https://tradingkitchen.org/chipped_beef.html#step-1",
+          "name": "Soak the beef (optional)"
         },
         {
           "@type": "HowToStep",
           "text": "In a large pan over medium heat, melt the butter. Add the chipped beef and cook for 3-4 minutes, until the meat softens and frizzes at the edges.",
-          "url": "https://tradingkitchen.org/chipped_beef.html#step-2"
+          "url": "https://tradingkitchen.org/chipped_beef.html#step-2",
+          "name": "Cook the beef"
         },
         {
           "@type": "HowToStep",
           "text": "Sprinkle the flour over the beef and stir constantly for 1-2 minutes until the flour is cooked (it will look pasty).",
-          "url": "https://tradingkitchen.org/chipped_beef.html#step-3"
+          "url": "https://tradingkitchen.org/chipped_beef.html#step-3",
+          "name": "Cook the flour"
         },
         {
           "@type": "HowToStep",
           "text": "Slowly pour in the milk, whisking constantly to prevent lumps.",
-          "url": "https://tradingkitchen.org/chipped_beef.html#step-4"
+          "url": "https://tradingkitchen.org/chipped_beef.html#step-4",
+          "name": "Whisk in the milk"
         },
         {
           "@type": "HowToStep",
           "text": "Bring the mixture to a low boil, stirring as it thickens (this should take 3-5 minutes).",
-          "url": "https://tradingkitchen.org/chipped_beef.html#step-5"
+          "url": "https://tradingkitchen.org/chipped_beef.html#step-5",
+          "name": "Thicken the sauce"
         },
         {
           "@type": "HowToStep",
           "text": "Reduce the heat, add salt and pepper to taste (be careful, the beef is already salty).",
-          "url": "https://tradingkitchen.org/chipped_beef.html#step-6"
+          "url": "https://tradingkitchen.org/chipped_beef.html#step-6",
+          "name": "Season to taste"
         },
         {
           "@type": "HowToStep",
           "text": "Serve generously over the slices of toasted bread.",
-          "url": "https://tradingkitchen.org/chipped_beef.html#step-7"
+          "url": "https://tradingkitchen.org/chipped_beef.html#step-7",
+          "name": "Serve on toast"
         }
-      ]
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Trading Kitchen",
+        "url": "https://tradingkitchen.org/"
+      },
+      "recipeCategory": "Main course",
+      "recipeCuisine": "American",
+      "keywords": "chipped beef, creamed beef, toast, budget cooking",
+      "prepTime": "PT5M",
+      "cookTime": "PT15M"
     }
   ]
 }
@@ -123,11 +140,11 @@
         <article class="recipe-card">
             
             <h1 class="recipe-title">Chipped Beef on Toast</h1>
+            <p class="recipe-byline">By <a href="/">Trading Kitchen</a></p>
             <a href="#recipe-section" class="inline-block font-bold underline mb-2 print:hidden">Jump to recipe &darr;</a>
 
             <img src="sos.jpg?v=e309c555b2" alt="Dried beef in creamy milk gravy over white-bread toast" class="recipe-hero print:hidden" decoding="async">
 
-            
             <!-- Share Icons -->
             <div class="flex flex-wrap items-center gap-2 my-6 print:hidden border-b border-gray-200 pb-4">
                 <span class="text-gray-600 font-bold uppercase text-sm tracking-wider">Share:</span>
@@ -159,6 +176,20 @@
             <!-- Section 2: The Recipe -->
             <section id="recipe-section" class="my-8">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 border-b-2 border-gray-300 pb-2">The Recipe</h2>
+
+                <p class="recipe-meta print:hidden">Main course · American</p>
+
+                <dl class="recipe-facts grid grid-cols-2 gap-4 my-6 text-center">
+                    <div>
+                        <dt class="text-lg font-bold">Prep Time</dt>
+                        <dd class="text-lg" data-time-field="prepTime" data-duration="PT5M">About 5 minutes</dd>
+                    </div>
+                    <div>
+                        <dt class="text-lg font-bold">Cook Time</dt>
+                        <dd class="text-lg" data-time-field="cookTime" data-duration="PT15M">About 10–15 minutes</dd>
+                    </div>
+                </dl>
+                <p class="recipe-timing-note">Prep/cook times are estimates; optional soaking adds a few minutes.</p>
 
                 <img src="sos.jpg?v=e309c555b2" alt="Dried beef in creamy milk gravy over white-bread toast" class="recipe-print-image hidden print:block" decoding="async">
                 
@@ -216,7 +247,6 @@
 <script src="assets/analytics.js" defer></script>
 <script>
 </script>
-
 
 <script>
     document.getElementById('year').textContent = new Date().getFullYear();

@@ -8,6 +8,7 @@ import re
 import subprocess
 import sys
 import xml.etree.ElementTree as ET
+from recipe_metadata import RecipeDocument, validate_recipe_metadata
 
 DOMAIN = "tradingkitchen.org"
 ORIGIN = f"https://{DOMAIN}"
@@ -34,7 +35,9 @@ class Page(HTMLParser):
         self.current_form = None
         self.active = None
         self.buffer = []
-        self.feed(path.read_text(encoding="utf-8"))
+        source = path.read_text(encoding="utf-8")
+        self.recipe_document = RecipeDocument(source)
+        self.feed(source)
         self.close()
 
     def handle_starttag(self, tag, attributes):
@@ -207,6 +210,7 @@ def main():
             for attribute, value in attrs.items():
                 if attribute.startswith("on") and value:
                     check_javascript(f"function handler(event) {{\n{value}\n}}", f"{page.name}: {attribute}")
+        recipe_count = 0
         for attrs, source in page.scripts:
             if attrs.get("type") == "application/ld+json":
                 try:
@@ -214,12 +218,14 @@ def main():
                     for item in schema_objects(data):
                         types = item.get("@type", [])
                         if types == "Recipe" or isinstance(types, list) and "Recipe" in types:
-                            for field in ("name", "image", "recipeIngredient", "recipeInstructions"):
-                                check(bool(item.get(field)), f"{page.name}: Recipe missing {field}")
+                            recipe_count += 1
+                            errors.extend(f"{page.name}: {error}" for error in validate_recipe_metadata(item, page.recipe_document, page.url))
                 except (ValueError, TypeError) as error:
                     errors.append(f"{page.name}: invalid JSON-LD: {error}")
             elif not attrs.get("src") and attrs.get("type", "") in {"", "text/javascript", "module"}:
                 check_javascript(source, page.name, attrs.get("type") == "module")
+        if "recipe-section" in page.ids:
+            check(recipe_count == 1, f"{page.name}: expected one Recipe structured-data object")
         for stylesheet in page.styles:
             for value in re.findall(r"url\(\s*['\"]?([^'\")]+)['\"]?\s*\)", stylesheet):
                 local_target(value.strip(), page.url, page.name)
