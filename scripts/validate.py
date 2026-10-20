@@ -8,7 +8,7 @@ import re
 import subprocess
 import sys
 import xml.etree.ElementTree as ET
-from recipe_metadata import RecipeDocument, validate_recipe_metadata
+from recipe_metadata import RecipeDocument, VOID_TAGS, validate_recipe_metadata
 
 DOMAIN = "tradingkitchen.org"
 ORIGIN = f"https://{DOMAIN}"
@@ -28,6 +28,9 @@ class Page(HTMLParser):
         self.name = path.relative_to(SITE).as_posix()
         self.url = urljoin(ORIGIN + "/", self.name if self.name != "index.html" else "")
         self.tags = []
+        self.context_tags = []
+        self.element_stack = []
+        self.comments = []
         self.ids = set()
         self.scripts = []
         self.styles = []
@@ -43,6 +46,9 @@ class Page(HTMLParser):
     def handle_starttag(self, tag, attributes):
         attrs = dict(attributes)
         self.tags.append((tag, attrs))
+        self.context_tags.append((tag, attrs, tuple(self.element_stack)))
+        if tag not in VOID_TAGS:
+            self.element_stack.append((tag, attrs))
         if tag == "form":
             self.current_form = {"attrs": attrs, "fields": []}
             self.forms.append(self.current_form)
@@ -65,7 +71,14 @@ class Page(HTMLParser):
         if self.active:
             self.buffer.append(data)
 
+    def handle_comment(self, data):
+        self.comments.append(data)
+
     def handle_endtag(self, tag):
+        for index in range(len(self.element_stack) - 1, -1, -1):
+            if self.element_stack[index][0] == tag:
+                del self.element_stack[index:]
+                break
         if tag == "form":
             self.current_form = None
         if self.active and self.active[0] == tag:
@@ -81,6 +94,9 @@ class Page(HTMLParser):
 
     def meta(self, name):
         return [attrs.get("content", "") for attrs in self.attributes("meta") if attrs.get("name", "").lower() == name]
+
+    def text_for(self, attributes):
+        return next((element.text for element in self.recipe_document.elements if element.attrs == attributes), "")
 
     @property
     def noindex(self):
@@ -125,6 +141,63 @@ def schema_objects(value):
             yield from schema_objects(item)
 
 
+def privacy_errors(page):
+    """Catch missing consent controls and accidental pre-consent dependencies."""
+    problems = []
+
+    def require(condition, message):
+        if not condition:
+            problems.append(f"{page.name}: {message}")
+
+    def local_asset(value, pattern):
+        try:
+            target = urlsplit(urljoin(page.url, value))
+            return target.scheme == "https" and target.netloc == DOMAIN and bool(re.fullmatch(pattern, target.path))
+        except ValueError:
+            return False
+
+    def inside(ancestors, tag, element_id=None):
+        return any(name == tag and (element_id is None or attrs.get("id") == element_id) for name, attrs in ancestors)
+
+    def labelled(attrs):
+        return bool(attrs.get("aria-label", "").strip() or page.text_for(attrs).strip())
+
+    analytics = [attrs for attrs in page.attributes("script") if local_asset(attrs.get("src", ""), r"/assets/analytics(?:\.[0-9a-f]+)?\.js")]
+    require(len(analytics) == 1 and "defer" in analytics[0], "expected one deferred first-party analytics consent script")
+    dialogs = [attrs for attrs in page.attributes("dialog") if attrs.get("id") == "privacy-dialog"]
+    require(len(dialogs) == 1, "expected one privacy dialog")
+    if len(dialogs) == 1:
+        for attribute in ("aria-labelledby", "aria-describedby"):
+            referenced_ids = dialogs[0].get(attribute, "").split()
+            require(bool(referenced_ids) and all(value in page.ids for value in referenced_ids), f"privacy dialog needs valid {attribute}")
+    choices = [(tag, attrs) for tag, attrs, ancestors in page.context_tags if "data-consent-choice" in attrs and inside(ancestors, "dialog", "privacy-dialog")]
+    all_choices = [attrs for _, attrs in page.tags if "data-consent-choice" in attrs]
+    require(len(all_choices) == 3 and sorted(attrs["data-consent-choice"] for _, attrs in choices) == ["advertising", "analytics", "rejected"], "privacy dialog needs exactly one reject, analytics-only and advertising choice")
+    require(all(tag == "button" and attrs.get("type") == "button" and "disabled" not in attrs and labelled(attrs) for tag, attrs in choices), "privacy choices must be labelled, enabled buttons")
+    openers = [(tag, attrs) for tag, attrs, ancestors in page.context_tags if "data-privacy-open" in attrs and inside(ancestors, "footer")]
+    require(len(openers) == 1, "footer needs one privacy choices button")
+    if len(openers) == 1:
+        tag, attrs = openers[0]
+        require(tag == "button" and attrs.get("type") == "button" and attrs.get("aria-controls") == "privacy-dialog" and attrs.get("aria-haspopup") == "dialog" and "disabled" not in attrs and labelled(attrs), "footer privacy choices button must be accessible and target the dialog")
+    require(any(tag == "a" and local_asset(attrs.get("href", ""), r"/privacy\.html") and labelled(attrs) and inside(ancestors, "footer") for tag, attrs, ancestors in page.context_tags), "footer needs a link to our privacy policy")
+    require(not any(re.search(r"\binclude\s*:", comment, re.IGNORECASE) for comment in page.comments), "unexpanded shared include in built HTML")
+    fonts = [attrs for attrs in page.attributes("link") if attrs.get("rel") == "stylesheet" and local_asset(attrs.get("href", ""), r"/assets/fonts(?:\.[0-9a-f]+)?\.css")]
+    require(len(fonts) == 1, "expected one first-party font stylesheet")
+    for tag, attrs in page.tags:
+        for attribute in ("href", "src"):
+            try:
+                host = urlsplit(urljoin(page.url, attrs.get(attribute, ""))).hostname or ""
+            except ValueError:
+                continue
+            require(host not in {"fonts.googleapis.com", "fonts.gstatic.com"}, "external Google Fonts request bypasses privacy choices")
+            if tag == "script" and attribute == "src":
+                require(not re.search(r"(?:^|\.)(?:googletagmanager\.com|google-analytics\.com|doubleclick\.net|googleadservices\.com)$", host), "third-party Google tracking must load through the consent script")
+    for attrs, source in page.scripts:
+        if not attrs.get("src") and attrs.get("type") != "application/ld+json":
+            require(not re.search(r"googletagmanager\.com|google-analytics\.com|\b(?:gtag|ga)\s*\(", source), "inline Google tracking bypasses the shared consent script")
+    return problems
+
+
 def check_newsletter(page):
     forms = [form for form in page.forms if form["attrs"].get("id") == "newsletter-form"]
     check(len(forms) == 1, "index.html: expected one mailing-list signup form")
@@ -145,6 +218,11 @@ def check_newsletter(page):
         check(bool(description_ids) and all(value in page.ids for value in description_ids), "index.html: signup email needs accessible confirmation instructions")
     check(any(field.get("type") == "hidden" and field.get("name") == "embed" and field.get("value") == "1" for field in form["fields"]), "index.html: missing Buttondown embed field")
     check(not any(field.get("formaction") or "formnovalidate" in field for field in form["fields"]), "index.html: signup fields must preserve the provider endpoint and validation")
+    submit_buttons = [field for field in form["fields"] if field.get("type") == "submit"]
+    check(len(submit_buttons) == 1 and page.text_for(submit_buttons[0]) == "Join the email list", "index.html: signup action must clearly say Join the email list")
+    check(any(element.tag == "p" and "Email list powered by" in element.text and "Buttondown" in element.text for element in page.recipe_document.elements), "index.html: identify Buttondown as the email provider")
+    check(any(attrs.get("href") == "/privacy.html" and page.text_for(attrs) == "Our privacy policy" for attrs in page.attributes("a")), "index.html: newsletter needs our own privacy policy link")
+    check(not any(attrs.get("href", "").startswith("https://buttondown.com/legal/privacy") for attrs in page.attributes("a")), "index.html: link to our policy; provider details belong in privacy.html")
 
 
 def check_recipe_layout(page):
@@ -175,6 +253,7 @@ def main():
     check(bool(pages), "No HTML pages were built")
     page_by_path = {page.path: page for page in pages}
     for page in pages:
+        errors.extend(privacy_errors(page))
         if page.name == "index.html":
             check_newsletter(page)
         check_recipe_layout(page)
@@ -232,8 +311,14 @@ def main():
     for path in SITE.rglob("*.js"):
         check_javascript(path.read_text(encoding="utf-8"), path.relative_to(SITE).as_posix())
     for path in SITE.rglob("*.css"):
-        for value in re.findall(r"url\(\s*['\"]?([^'\")]+)['\"]?\s*\)", path.read_text(encoding="utf-8")):
-            local_target(value.strip(), urljoin(ORIGIN + "/", path.relative_to(SITE).as_posix()), path.name)
+        source = path.read_text(encoding="utf-8")
+        check(not re.search(r"(?:fonts\.googleapis\.com|fonts\.gstatic\.com)", source), f"{path.name}: font requests must stay first-party")
+        for value in re.findall(r"url\(\s*['\"]?([^'\")]+)['\"]?\s*\)", source):
+            base_url = urljoin(ORIGIN + "/", path.relative_to(SITE).as_posix())
+            if re.fullmatch(r"fonts(?:\.[0-9a-f]+)?\.css", path.name):
+                font_url = urlsplit(urljoin(base_url, value.strip()))
+                check(font_url.scheme == "https" and font_url.netloc == DOMAIN, f"{path.name}: font files must stay first-party")
+            local_target(value.strip(), base_url, path.name)
     try:
         sitemap = ET.parse(SITE / "sitemap.xml")
         urls = [element.text for element in sitemap.findall("{http://www.sitemaps.org/schemas/sitemap/0.9}url/{http://www.sitemaps.org/schemas/sitemap/0.9}loc")]
@@ -249,7 +334,7 @@ def main():
         check((SITE / "CNAME").read_text(encoding="utf-8").strip() == DOMAIN, f"CNAME must contain {DOMAIN}")
     except OSError as error:
         errors.append(str(error))
-    print(f"Checked {len(pages)} pages, signup form, local links/assets, JavaScript syntax, JSON-LD, sitemap, robots.txt and CNAME.")
+    print(f"Checked {len(pages)} pages, privacy controls, signup form, local links/assets, JavaScript syntax, JSON-LD, sitemap, robots.txt and CNAME.")
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tradingkitchen.org/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
     <loc>https://tradingkitchen.org/ash_cakes.html</loc>
@@ -58,6 +58,10 @@
   </url>
   <url>
     <loc>https://tradingkitchen.org/zaprezna_soup.html</loc>
+    <lastmod>2026-10-20</lastmod>
+  </url>
+  <url>
+    <loc>https://tradingkitchen.org/privacy.html</loc>
     <lastmod>2026-10-20</lastmod>
   </url>
 </urlset>

@@ -15,15 +15,12 @@
     <meta name="twitter:card" content="summary">
     <meta name="robots" content="noindex, follow">
     <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="assets/fonts.css">
     <link rel="stylesheet" href="assets/tailwind.css">
-    <!-- Era-appropriate fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/site.css">
     <link rel="icon" type="image/png" href="T.png">
 </head>
-<body class="antialiased leading-relaxed min-h-screen flex items-center justify-center p-6">
+<body class="antialiased leading-relaxed min-h-screen flex flex-col items-center justify-center p-6">
     <a class="skip-link" href="#main-content">Skip to content</a>
 
     <main id="main-content" class="max-w-2xl w-full bg-white p-8 md:p-12 rounded-lg shadow-xl border-2 border-black text-center">
@@ -40,8 +37,11 @@
 
         <footer class="mt-12 text-gray-500 text-sm italic">
             "Resilience is decentralized."
+            <!-- include: privacy-links -->
         </footer>
     </main>
 
+<script src="assets/analytics.js" defer></script>
+<!-- include: privacy-dialog -->
 </body>
 </html>

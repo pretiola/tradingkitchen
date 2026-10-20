@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Stage only public website files for GitHub Pages."""
 from pathlib import Path
+import re
 import shutil
 import subprocess
 
@@ -19,6 +20,20 @@ def copy_public_file(source: Path) -> None:
     shutil.copyfile(source, destination)
 
 
+def render_shared_partials() -> None:
+    """Expand a small allowlist of shared HTML, without publishing template sources."""
+    names = {"privacy-links", "privacy-dialog"}
+    def render(match):
+        name = match.group(1)
+        if name not in names:
+            raise SystemExit(f"Unknown shared partial: {name}")
+        return (ROOT / "partials" / f"{name}.html").read_text(encoding="utf-8").strip()
+    for page in OUTPUT.glob("*.html"):
+        html = page.read_text(encoding="utf-8")
+        html = re.sub(r"<!-- include: ([a-z-]+) -->", render, html)
+        page.write_text(html, encoding="utf-8")
+
+
 def main() -> None:
     if OUTPUT.is_symlink():
         raise SystemExit("Refusing to replace a symlink at _site")
@@ -32,9 +47,10 @@ def main() -> None:
             if source.is_symlink():
                 raise SystemExit(f"Refusing to publish symlink: {source.name}")
             for asset in sorted(source.rglob("*")):
-                if asset.is_file() and asset.suffix.lower() in PUBLIC_EXTENSIONS:
+                if asset.is_file() and (asset.suffix.lower() in PUBLIC_EXTENSIONS or source.name == "fonts" and asset.name == "LICENSE.txt"):
                     copy_public_file(asset)
     (OUTPUT / ".nojekyll").write_text("", encoding="utf-8")
+    render_shared_partials()
     subprocess.run(["node", "scripts/optimize-images.mjs"], cwd=ROOT, check=True)
     print(f"Staged {sum(path.is_file() for path in OUTPUT.rglob('*'))} public files in _site/")
 
