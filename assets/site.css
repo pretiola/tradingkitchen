@@ -58,6 +58,27 @@ body::after {
 }
 
 .recipe-byline a { text-decoration: underline; text-underline-offset: .15em; }
+
+.recipe-jump-links {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: clamp(.5rem, 2vw, 1.5rem);
+  margin: -.375rem -.375rem .125rem;
+  padding: .375rem;
+  font-size: clamp(.875rem, 3.5vw, 1rem);
+  line-height: 1.4;
+  overflow-x: auto;
+}
+
+.recipe-jump-links a {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  min-height: 2.75rem;
+  white-space: nowrap;
+}
+
 .recipe-facts dt { font-weight: 700; }
 
 .recipe-meta, .recipe-timing-note {
