@@ -183,3 +183,10 @@ Buttondown Email settings were verified: open tracking off, click tracking off, 
 
 
 After activation, live browser checks confirmed zero Google requests with optional tracking rejected; advertising opt-in sent `G111` consent with personalized-advertising permission and an audience request. Switching to analytics-only reloaded the tag with `G101` and non-personalized measurement, without advertising requests. Page addresses omitted the test query string. Rejection removed the tag and accessible GA cookies. The original rejected test preference was restored. All 11 focused consent regression tests passed again; no site-code changes were needed for activation.
+
+
+## Homepage image loading and focus: October 20, 2026
+
+Homepage recipe images use `data-defer-image` in source HTML. The image pipeline preserves optimized responsive URLs in `data-src`/`data-srcset`, emits an inline SVG placeholder with intrinsic dimensions, and supplies a normal optimized `noscript` fallback. The homepage-only loader uses IntersectionObserver with zero margin, so offscreen images are not fetched by the preload scanner. The fallback for browsers without IntersectionObserver also checks the viewport. Printing requests remaining images. Keep the marker when adding a homepage recipe card; validation checks the loader, source deferral and matching fallbacks.
+
+Browser checks at 1280×720 showed only the four first-row images requested initially; scrolling loaded the next four while six remained deferred. At 390×844 only one image was requested initially. With JavaScript disabled, all 14 fallback images remained available and the first loaded normally. The privacy heading keeps its programmatic focus for accessibility but suppresses its decorative outline; buttons and links retain visible keyboard focus. All 52 automated tests and the production build passed.

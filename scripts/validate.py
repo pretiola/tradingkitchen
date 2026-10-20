@@ -245,6 +245,77 @@ def check_recipe_layout(page):
     check(any(re.search(r"/site(?:\.[0-9a-f]+)?\.css$", urlsplit(attrs.get("href", "")).path) for attrs in page.attributes("link")), f"{page.name}: missing shared site stylesheet")
 
 
+def check_srcset(value, page, require_local=False):
+    for candidate in value.split(","):
+        fields = candidate.strip().split()
+        check(len(fields) == 2 and bool(re.fullmatch(r"[1-9][0-9]*w", fields[-1])), f"{page.name}: invalid width-based srcset candidate {candidate}")
+        if fields:
+            target = local_target(fields[0], page.url, page.name)
+            if require_local:
+                check(target is not None, f"{page.name}: deferred image candidates must be local assets")
+
+
+def check_images(page):
+    """Validate responsive images and the homepage's scroll-triggered contract."""
+    visible = []
+    deferred = []
+    fallbacks = []
+    for tag, attrs, ancestors in page.context_tags:
+        if tag != "img":
+            continue
+        in_noscript = any(name == "noscript" for name, _ in ancestors)
+        is_deferred = "data-defer-image" in attrs
+        check(bool(attrs.get("alt")), f"{page.name}: image needs descriptive alt text")
+        check(all(attrs.get(size, "").isdigit() and int(attrs[size]) > 0 for size in ("width", "height")), f"{page.name}: image needs intrinsic width and height")
+        responsive = attrs.get("data-srcset", "") if is_deferred else attrs.get("srcset", "")
+        check(bool(responsive) and bool(attrs.get("sizes")), f"{page.name}: image needs responsive {'data-srcset' if is_deferred else 'srcset'} and sizes")
+        if responsive:
+            check_srcset(responsive, page, require_local=is_deferred)
+        if in_noscript:
+            fallbacks.append(attrs)
+        else:
+            visible.append(attrs)
+        if is_deferred:
+            deferred.append(attrs)
+            check(page.name == "index.html" and not in_noscript, f"{page.name}: only visible homepage images may use data-defer-image")
+            check(attrs.get("src", "").startswith("data:image/"), f"{page.name}: deferred image src must be an inline image placeholder")
+            check("srcset" not in attrs, f"{page.name}: deferred image must not expose a preloaded srcset")
+            check(attrs.get("loading") == "eager", f"{page.name}: observer-triggered images must use loading=eager")
+            source = attrs.get("data-src", "")
+            check(bool(source), f"{page.name}: deferred image needs data-src")
+            if source:
+                check(local_target(source, page.url, page.name) is not None, f"{page.name}: deferred image data-src must be a local asset")
+        else:
+            check(bool(attrs.get("src")), f"{page.name}: image needs a source")
+            if attrs.get("src"):
+                check(not attrs["src"].startswith("http://"), f"{page.name}: insecure src: {attrs['src']}")
+                local_target(attrs["src"], page.url, page.name)
+            check("data-src" not in attrs and "data-srcset" not in attrs, f"{page.name}: deferred image sources require data-defer-image")
+
+    loaders = []
+    for attrs in page.attributes("script"):
+        try:
+            target = urlsplit(urljoin(page.url, attrs.get("src", "")))
+        except ValueError:
+            continue  # The general URL check reports malformed script sources.
+        if re.fullmatch(r"/assets/homepage-images(?:\.[0-9a-f]+)?\.js", target.path):
+            loaders.append((attrs, target))
+    if page.name == "index.html":
+        check(all("data-defer-image" in attrs for attrs in visible), "index.html: all visible homepage images must defer their requests")
+        check(len(loaders) == 1 and "defer" in loaders[0][0] and loaders[0][1].scheme == "https" and loaders[0][1].netloc == DOMAIN,
+              "index.html: expected one deferred first-party homepage image loader")
+        if len(loaders) == 1:
+            local_target(loaders[0][0]["src"], page.url, page.name)
+        check(len(fallbacks) == len(deferred), "index.html: every deferred image needs one noscript fallback")
+        if len(fallbacks) == len(deferred):
+            for image, fallback in zip(deferred, fallbacks):
+                check(image.get("data-src") == fallback.get("src") and image.get("data-srcset") == fallback.get("srcset") and
+                      all(image.get(attribute) == fallback.get(attribute) for attribute in ("alt", "width", "height", "sizes")),
+                      "index.html: noscript image must preserve its deferred image sources, dimensions and description")
+    else:
+        check(not loaders, f"{page.name}: homepage image loader belongs only on index.html")
+
+
 def main():
     check(SITE.is_dir(), f"Missing build output: {SITE}; run npm run build first")
     if not SITE.is_dir():
@@ -257,6 +328,7 @@ def main():
         if page.name == "index.html":
             check_newsletter(page)
         check_recipe_layout(page)
+        check_images(page)
         html = page.attributes("html")
         check(len(html) == 1 and bool(html[0].get("lang")), f"{page.name}: missing document language")
         check(bool(page.attributes("title")), f"{page.name}: missing title")
@@ -267,19 +339,13 @@ def main():
             check(any(attrs.get("type") == "application/ld+json" for attrs, _ in page.scripts), f"{page.name}: missing structured data")
         check(not any("cdn.tailwindcss.com" in attrs.get("src", "") for attrs in page.attributes("script")), f"{page.name}: development Tailwind CDN is still enabled")
         for tag, attrs in page.tags:
-            if tag == "img":
-                check(bool(attrs.get("alt")), f"{page.name}: image needs descriptive alt text")
-                check(all(attrs.get(size, "").isdigit() and int(attrs[size]) > 0 for size in ("width", "height")), f"{page.name}: image needs intrinsic width and height")
-                check(bool(attrs.get("srcset")) and bool(attrs.get("sizes")), f"{page.name}: image needs responsive srcset and sizes")
-            if attrs.get("srcset"):
-                for candidate in attrs["srcset"].split(","):
-                    fields = candidate.strip().split()
-                    check(len(fields) == 2 and bool(re.fullmatch(r"[1-9][0-9]*w", fields[-1])), f"{page.name}: invalid width-based srcset candidate {candidate}")
-                    if fields:
-                        local_target(fields[0], page.url, page.name)
+            if tag != "img" and attrs.get("srcset"):
+                check_srcset(attrs["srcset"], page)
             for attribute in ("href", "src", "poster", "action"):
                 if not attrs.get(attribute):
                     continue
+                if tag == "img" and attribute == "src":
+                    continue  # Includes noscript and deferred sources checked above.
                 value = attrs[attribute]
                 if attribute in {"src", "poster", "action"}:
                     check(not value.startswith("http://"), f"{page.name}: insecure {attribute}: {value}")

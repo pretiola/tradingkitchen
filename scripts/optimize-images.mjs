@@ -71,6 +71,21 @@ export function rewriteHTMLImages(html, page, images) {
     attrs.set('width', image.width);
     attrs.set('height', image.height);
     if (!attrs.has('decoding')) attrs.set('decoding', 'async');
+    // Native lazy loading may fetch images well before they enter the viewport.
+    // The homepage observer owns scheduling for explicitly marked card images.
+    if (page === 'index.html' && attrs.has('data-defer-image')) {
+      const fallbackAttrs = new Map(attrs);
+      for (const name of fallbackAttrs.keys()) {
+        if (name.startsWith('data-')) fallbackAttrs.delete(name);
+      }
+      fallbackAttrs.set('loading', 'lazy');
+      attrs.set('data-src', attrs.get('src'));
+      attrs.set('data-srcset', attrs.get('srcset'));
+      attrs.set('src', `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="${image.width}" height="${image.height}"/>`)}`);
+      attrs.delete('srcset');
+      attrs.set('loading', 'eager');
+      return `${serializeTag('img', attrs)}<noscript>${serializeTag('img', fallbackAttrs)}</noscript>`;
+    }
     return serializeTag('img', attrs);
   });
 }

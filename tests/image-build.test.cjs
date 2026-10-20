@@ -31,3 +31,41 @@ test('local URLs resolve from their page or stylesheet and remote assets remain 
   assert.equal(rewriteHTMLImages(external, 'cookies.html', { 'cookies.jpg': image }), external);
   assert.equal(rewriteCSSImages(".hero { background: url('../cookies.jpg'); }", 'assets/pantry.css', { 'cookies.jpg': image }), '.hero { background: url("/assets/images/cookies-1000.abcdef012345.webp"); }');
 });
+
+test('marked homepage images defer responsive requests and retain an optimized no-script fallback', async () => {
+  const { rewriteHTMLImages, imageSizes } = await pipeline;
+  const schema = '<script type="application/ld+json">{"image":"https://tradingkitchen.org/cookies.jpg"}</script>';
+  const original = `${schema}<img src="cookies.jpg" alt="Cookies &amp; milk" class="recipe-card" loading="lazy" data-defer-image>`;
+  const result = rewriteHTMLImages(original, 'index.html', { 'cookies.jpg': image });
+  assert.ok(result.startsWith(schema), 'structured data keeps its public image URL');
+  const [deferred, fallback] = result.match(/<img\b[^>]*>/g);
+  assert.match(deferred, /\ssrc="data:image\/svg\+xml,/);
+  assert.doesNotMatch(deferred, /\ssrcset=/, 'the browser must not discover a responsive request before scrolling');
+  assert.match(deferred, /\sdata-src="\/assets\/images\/cookies-640\.abcdef012345\.webp"/);
+  assert.match(deferred, /\sdata-srcset="[^\"]*320w[^\"]*1000w"/);
+  assert.match(deferred, /\sdata-defer-image(?:\s|>)/);
+  assert.match(deferred, /\sloading="eager"/);
+  assert.match(deferred, /\swidth="1000" height="750"/);
+  assert.ok(deferred.includes(`sizes="${imageSizes('index.html', 'recipe-card')}"`));
+  assert.match(deferred, /alt="Cookies &amp; milk" class="recipe-card"/);
+  assert.ok(result.includes(`<noscript>${fallback}</noscript>`));
+  assert.match(fallback, /\ssrc="\/assets\/images\/cookies-640\.abcdef012345\.webp"/);
+  assert.match(fallback, /\ssrcset="[^\"]*320w[^\"]*1000w"/);
+  assert.match(fallback, /\sloading="lazy"/);
+  assert.match(fallback, /\swidth="1000" height="750"/);
+  assert.match(fallback, /alt="Cookies &amp; milk" class="recipe-card"/);
+  assert.doesNotMatch(fallback, /\sdata-/, 'no observer attributes belong to the no-script fallback');
+  assert.ok(fallback.includes(`sizes="${imageSizes('index.html', 'recipe-card')}"`));
+  assert.equal(rewriteHTMLImages(result, 'index.html', { 'cookies.jpg': image }), result, 'a second pass must not nest or duplicate the fallback');
+});
+
+test('unmarked homepage images and images on recipe pages retain normal responsive loading', async () => {
+  const { rewriteHTMLImages } = await pipeline;
+  for (const [page, marker] of [['index.html', ''], ['cookies.html', ' data-defer-image']]) {
+    const result = rewriteHTMLImages(`<img src="cookies.jpg" alt="Cookies" loading="lazy"${marker}>`, page, { 'cookies.jpg': image });
+    assert.match(result, /\ssrc="\/assets\/images\/cookies-/);
+    assert.match(result, /\ssrcset="[^\"]*1000w"/);
+    assert.match(result, /\sloading="lazy"/);
+    assert.doesNotMatch(result, /<noscript>|\sdata-src=/);
+  }
+});
